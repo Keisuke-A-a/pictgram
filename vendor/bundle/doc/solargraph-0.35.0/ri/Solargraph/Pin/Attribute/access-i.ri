@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"access:ETI"&Solargraph::Pin::Attribute#access;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"*@return [::Symbol] :reader or :writer;T:
+@fileI"$lib/solargraph/pin/attribute.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Solargraph::Pin::Attribute;TcRDoc::NormalClass0

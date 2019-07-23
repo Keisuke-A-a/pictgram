@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Solargraph::Library - solargraph-0.35.0 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Object
+  
+</div>
+
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="Logging.html">Solargraph::Logging</a>
+  
+  
+  </ul>
+</div>
+
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-load">::load</a>
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-api_map">#api_map</a>
+    
+    <li ><a href="#method-i-attach">#attach</a>
+    
+    <li ><a href="#method-i-attached-3F">#attached?</a>
+    
+    <li ><a href="#method-i-bundle">#bundle</a>
+    
+    <li ><a href="#method-i-catalog">#catalog</a>
+    
+    <li ><a href="#method-i-close">#close</a>
+    
+    <li ><a href="#method-i-completions_at">#completions_at</a>
+    
+    <li ><a href="#method-i-contain-3F">#contain?</a>
+    
+    <li ><a href="#method-i-create">#create</a>
+    
+    <li ><a href="#method-i-create_from_disk">#create_from_disk</a>
+    
+    <li ><a href="#method-i-definitions_at">#definitions_at</a>
+    
+    <li ><a href="#method-i-delete">#delete</a>
+    
+    <li ><a href="#method-i-detach">#detach</a>
+    
+    <li ><a href="#method-i-diagnose">#diagnose</a>
+    
+    <li ><a href="#method-i-document">#document</a>
+    
+    <li ><a href="#method-i-document_symbols">#document_symbols</a>
+    
+    <li ><a href="#method-i-folding_ranges">#folding_ranges</a>
+    
+    <li ><a href="#method-i-get_path_pins">#get_path_pins</a>
+    
+    <li ><a href="#method-i-inspect">#inspect</a>
+    
+    <li ><a href="#method-i-locate_pins">#locate_pins</a>
+    
+    <li ><a href="#method-i-locate_ref">#locate_ref</a>
+    
+    <li ><a href="#method-i-merge">#merge</a>
+    
+    <li ><a href="#method-i-mutex">#mutex</a>
+    
+    <li ><a href="#method-i-open-3F">#open?</a>
+    
+    <li ><a href="#method-i-path_pins">#path_pins</a>
+    
+    <li ><a href="#method-i-query_symbols">#query_symbols</a>
+    
+    <li ><a href="#method-i-read">#read</a>
+    
+    <li ><a href="#method-i-read_text">#read_text</a>
+    
+    <li ><a href="#method-i-references_from">#references_from</a>
+    
+    <li ><a href="#method-i-search">#search</a>
+    
+    <li ><a href="#method-i-signatures_at">#signatures_at</a>
+    
+    <li ><a href="#method-i-synchronized-3F">#synchronized?</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Solargraph::Library">
+  <h1 id="class-Solargraph::Library" class="class">
+    class Solargraph::Library
+  </h1>
+
+  <section class="description">
+    
+<p>A <a href="Library.html">Library</a> handles coordination between a <a
+href="Workspace.html">Workspace</a> and an <a
+href="ApiMap.html">ApiMap</a>.</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-current" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">current</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>@return [Source, nil]</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">name</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>@return [String, nil]</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-workspace" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">workspace</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>@return [Solargraph::Workspace]</p>
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-load" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">load</span><span
+            class="method-args">(directory = &#39;&#39;, name = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a library from a directory.</p>
+
+<p>@param directory [String] The path to be used for the workspace @param name
+[String, nil] @return [Solargraph::Library]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="load-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 361</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">load</span> <span class="ruby-identifier">directory</span> = <span class="ruby-string">&#39;&#39;</span>, <span class="ruby-identifier">name</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-constant">Solargraph</span><span class="ruby-operator">::</span><span class="ruby-constant">Library</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Solargraph</span><span class="ruby-operator">::</span><span class="ruby-constant">Workspace</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">directory</span>), <span class="ruby-identifier">name</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(workspace = Solargraph::Workspace.new, name = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param workspace [Solargraph::Workspace] @param name [String, nil]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span> <span class="ruby-identifier">workspace</span> = <span class="ruby-constant">Solargraph</span><span class="ruby-operator">::</span><span class="ruby-constant">Workspace</span>.<span class="ruby-identifier">new</span>, <span class="ruby-identifier">name</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@workspace</span> = <span class="ruby-identifier">workspace</span>
+  <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">api_map</span>.<span class="ruby-identifier">catalog</span> <span class="ruby-identifier">bundle</span>
+  <span class="ruby-ivar">@synchronized</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-ivar">@catalog_mutex</span> = <span class="ruby-constant">Mutex</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-attach" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">attach</span><span
+            class="method-args">(source)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Attach a source to the library.</p>
+
+<p>The attached source does not need to be a part of the workspace. The
+library will include it in the <a href="ApiMap.html">ApiMap</a> while
+it&#39;s attached. Only one source can be attached to the library at a
+time.</p>
+
+<p>@param source [Source, nil] @return [void]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="attach-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">attach</span> <span class="ruby-identifier">source</span>
+  <span class="ruby-identifier">mutex</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@synchronized</span> = (<span class="ruby-ivar">@current</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">source</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">synchronized?</span>
+    <span class="ruby-ivar">@current</span> = <span class="ruby-identifier">source</span>
+    <span class="ruby-identifier">catalog</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-attached-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">attached?</span><span
+            class="method-args">(filename)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>True if the specified file is currently attached.</p>
+
+<p>@param filename [String] @return [Boolean]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="attached-3F-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">attached?</span> <span class="ruby-identifier">filename</span>
+  <span class="ruby-operator">!</span><span class="ruby-ivar">@current</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@current</span>.<span class="ruby-identifier">filename</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">filename</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Library.html#method-i-open-3F">open?</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-catalog" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">catalog</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Update the <a href="ApiMap.html">ApiMap</a> from the library&#39;s
+workspace and open files.</p>
+
+<p>@return [void]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="catalog-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 335</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">catalog</span>
+  <span class="ruby-ivar">@catalog_mutex</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">synchronized?</span>
+    <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">info</span> <span class="ruby-node">&quot;Cataloging #{workspace.directory.empty? ? &#39;generic workspace&#39; : workspace.directory}&quot;</span>
+    <span class="ruby-identifier">api_map</span>.<span class="ruby-identifier">catalog</span> <span class="ruby-identifier">bundle</span>
+    <span class="ruby-ivar">@synchronized</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">info</span> <span class="ruby-node">&quot;Catalog complete (#{api_map.pins.length} pins)&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-close" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">close</span><span
+            class="method-args">(filename)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Close a file in the library. Closing a file will make it unavailable for
+checkout although it may still exist in the workspace.</p>
+
+<p>@param filename [String] @return [void]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="close-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 141</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">close</span> <span class="ruby-identifier">filename</span>
+  <span class="ruby-identifier">mutex</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@synchronized</span> = <span class="ruby-keyword">false</span>
+    <span class="ruby-ivar">@current</span> = <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@current</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@current</span>.<span class="ruby-identifier">filename</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">filename</span>
+    <span class="ruby-identifier">catalog</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-completions_at" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">completions_at</span><span
+            class="method-args">(filename, line, column)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get completion suggestions at the specified file and location.</p>
+
+<p>@param filename [String] The file to analyze @param line [Integer] The
+zero-based line number @param column [Integer] The zero-based column number
+@return [SourceMap::Completion] @todo Take a <a
+href="Location.html">Location</a> instead of filename/line/column</p>
+          
+          
+
+          
+          <div class="method-source-code" id="completions_at-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">completions_at</span> <span class="ruby-identifier">filename</span>, <span class="ruby-identifier">line</span>, <span class="ruby-identifier">column</span>
+  <span class="ruby-identifier">position</span> = <span class="ruby-constant">Position</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">line</span>, <span class="ruby-identifier">column</span>)
+  <span class="ruby-identifier">cursor</span> = <span class="ruby-constant">Source</span><span class="ruby-operator">::</span><span class="ruby-constant">Cursor</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">read</span>(<span class="ruby-identifier">filename</span>), <span class="ruby-identifier">position</span>)
+  <span class="ruby-identifier">api_map</span>.<span class="ruby-identifier">clip</span>(<span class="ruby-identifier">cursor</span>).<span class="ruby-identifier">complete</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-contain-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">contain?</span><span
+            class="method-args">(filename)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>True if the specified file is included in the workspace (but not
+necessarily open).</p>
+
+<p>@param filename [String] @return [Boolean]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="contain-3F-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">contain?</span> <span class="ruby-identifier">filename</span>
+  <span class="ruby-identifier">workspace</span>.<span class="ruby-identifier">has_file?</span>(<span class="ruby-identifier">filename</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create</span><span
+            class="method-args">(filename, text)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a source to be added to the workspace. The file is ignored if it is
+neither open in the library nor included in the workspace.</p>
+
+<p>@param filename [String] @param text [String] The contents of the file
+@return [Boolean] True if the file was added to the workspace.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="create-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create</span> <span class="ruby-identifier">filename</span>, <span class="ruby-identifier">text</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">mutex</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">contain?</span>(<span class="ruby-identifier">filename</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">open?</span>(<span class="ruby-identifier">filename</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">workspace</span>.<span class="ruby-identifier">would_merge?</span>(<span class="ruby-identifier">filename</span>)
+    <span class="ruby-ivar">@synchronized</span> = <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">source</span> = <span class="ruby-constant">Solargraph</span><span class="ruby-operator">::</span><span class="ruby-constant">Source</span>.<span class="ruby-identifier">load_string</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">filename</span>)
+    <span class="ruby-identifier">workspace</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">source</span>)
+    <span class="ruby-identifier">result</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create_from_disk" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_from_disk</span><span
+            class="method-args">(filename)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a file source from a file on disk. The file is ignored if it is
+neither open in the library nor included in the workspace.</p>
+
+<p>@param filename [String] @return [Boolean] True if the file was added to
+the workspace.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="create_from_disk-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_from_disk</span> <span class="ruby-identifier">filename</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">mutex</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">filename</span>) <span class="ruby-operator">||</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">filename</span>)
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">contain?</span>(<span class="ruby-identifier">filename</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">open?</span>(<span class="ruby-identifier">filename</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">workspace</span>.<span class="ruby-identifier">would_merge?</span>(<span class="ruby-identifier">filename</span>)
+    <span class="ruby-ivar">@synchronized</span> = <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">source</span> = <span class="ruby-constant">Solargraph</span><span class="ruby-operator">::</span><span class="ruby-constant">Source</span>.<span class="ruby-identifier">load_string</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">filename</span>), <span class="ruby-identifier">filename</span>)
+    <span class="ruby-identifier">workspace</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">source</span>)
+    <span class="ruby-identifier">result</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-definitions_at" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">definitions_at</span><span
+            class="method-args">(filename, line, column)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get definition suggestions for the expression at the specified file and
+location.</p>
+
+<p>@param filename [String] The file to analyze @param line [Integer] The
+zero-based line number @param column [Integer] The zero-based column number
+@return [Array&lt;Solargraph::Pin::Base&gt;] @todo Take filename/position
+instead of filename/line/column</p>
+          
+          
+
+          
+          <div class="method-source-code" id="definitions_at-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 170</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">definitions_at</span> <span class="ruby-identifier">filename</span>, <span class="ruby-identifier">line</span>, <span class="ruby-identifier">column</span>
+  <span class="ruby-identifier">position</span> = <span class="ruby-constant">Position</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">line</span>, <span class="ruby-identifier">column</span>)
+  <span class="ruby-identifier">cursor</span> = <span class="ruby-constant">Source</span><span class="ruby-operator">::</span><span class="ruby-constant">Cursor</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">read</span>(<span class="ruby-identifier">filename</span>), <span class="ruby-identifier">position</span>)
+  <span class="ruby-identifier">api_map</span>.<span class="ruby-identifier">clip</span>(<span class="ruby-identifier">cursor</span>).<span class="ruby-identifier">define</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">pin</span><span class="ruby-operator">|</span> <span class="ruby-identifier">pin</span>.<span class="ruby-identifier">realize</span>(<span class="ruby-identifier">api_map</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-delete" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete</span><span
+            class="method-args">(filename)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Delete a file from the library. Deleting a file will make it unavailable
+for checkout and optionally remove it from the workspace unless the
+workspace configuration determines that it should still exist.</p>
+
+<p>@param filename [String] @return [Boolean] True if the file was deleted</p>
+          
+          
+
+          
+          <div class="method-source-code" id="delete-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 126</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">delete</span> <span class="ruby-identifier">filename</span>
+  <span class="ruby-identifier">detach</span> <span class="ruby-identifier">filename</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">mutex</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-identifier">workspace</span>.<span class="ruby-identifier">remove</span>(<span class="ruby-identifier">filename</span>)
+    <span class="ruby-ivar">@synchronized</span> = <span class="ruby-operator">!</span><span class="ruby-identifier">result</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">synchronized?</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-detach" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">detach</span><span
+            class="method-args">(filename)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Detach the specified file if it is currently attached to the library.</p>
+
+<p>@param filename [String] @return [Boolean] True if the specified file was
+detached</p>
+          
+          
+
+          
+          <div class="method-source-code" id="detach-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">detach</span> <span class="ruby-identifier">filename</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@current</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@current</span>.<span class="ruby-identifier">filename</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">filename</span>
+  <span class="ruby-identifier">attach</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-diagnose" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">diagnose</span><span
+            class="method-args">(filename)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get diagnostics about a file.</p>
+
+<p>@param filename [String] @return [Array&lt;Hash&gt;]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="diagnose-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 302</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">diagnose</span> <span class="ruby-identifier">filename</span>
+  <span class="ruby-comment"># @todo Only open files get diagnosed. Determine whether anything or</span>
+  <span class="ruby-comment">#   everything in the workspace should get diagnosed, or if there should</span>
+  <span class="ruby-comment">#   be an option to do so.</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-keyword">return</span> [] <span class="ruby-keyword">unless</span> <span class="ruby-identifier">open?</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-identifier">catalog</span>
+  <span class="ruby-identifier">result</span> = []
+  <span class="ruby-identifier">source</span> = <span class="ruby-identifier">read</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-identifier">repargs</span> = {}
+  <span class="ruby-identifier">workspace</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">reporters</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;all!&#39;</span>
+      <span class="ruby-constant">Diagnostics</span>.<span class="ruby-identifier">reporters</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">reporter</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">repargs</span>[<span class="ruby-identifier">reporter</span>] <span class="ruby-operator">||=</span> []
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">args</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&#39;:&#39;</span>).<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:strip</span>)
+      <span class="ruby-identifier">name</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span>
+        <span class="ruby-identifier">reporter</span> = <span class="ruby-constant">Diagnostics</span>.<span class="ruby-identifier">reporter</span>(<span class="ruby-identifier">name</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">DiagnosticsError</span>, <span class="ruby-node">&quot;Diagnostics reporter #{name} does not exist&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">reporter</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">repargs</span>[<span class="ruby-identifier">reporter</span>] <span class="ruby-operator">||=</span> []
+      <span class="ruby-identifier">repargs</span>[<span class="ruby-identifier">reporter</span>].<span class="ruby-identifier">concat</span> <span class="ruby-identifier">args</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">repargs</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">reporter</span>, <span class="ruby-identifier">args</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">result</span>.<span class="ruby-identifier">concat</span> <span class="ruby-identifier">reporter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>.<span class="ruby-identifier">uniq</span>).<span class="ruby-identifier">diagnose</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">api_map</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-document" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">document</span><span
+            class="method-args">(query)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param query [String] @return [Array&lt;YARD::CodeObject::Base&gt;]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="document-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 248</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">document</span> <span class="ruby-identifier">query</span>
+  <span class="ruby-identifier">catalog</span>
+  <span class="ruby-identifier">api_map</span>.<span class="ruby-identifier">document</span> <span class="ruby-identifier">query</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-document_symbols" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">document_symbols</span><span
+            class="method-args">(filename)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get an array of document symbols.</p>
+
+<p>Document symbols are composed of namespace, method, and constant pins. The
+results of this query are appropriate for building the response to a
+textDocument/documentSymbol message in the language server protocol.</p>
+
+<p>@param filename [String] @return [Array&lt;Solargraph::Pin::Base&gt;]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="document_symbols-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 277</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">document_symbols</span> <span class="ruby-identifier">filename</span>
+  <span class="ruby-comment"># checkout filename</span>
+  <span class="ruby-identifier">api_map</span>.<span class="ruby-identifier">document_symbols</span>(<span class="ruby-identifier">filename</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-folding_ranges" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">folding_ranges</span><span
+            class="method-args">(filename)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get an array of foldable ranges for the specified file.</p>
+
+<p>@deprecated The library should not need to handle folding ranges. The</p>
+
+<pre>source itself has all the information it needs.</pre>
+
+<p>@param filename [String] @return [Array&lt;Range&gt;]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="folding_ranges-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 352</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">folding_ranges</span> <span class="ruby-identifier">filename</span>
+  <span class="ruby-identifier">read</span>(<span class="ruby-identifier">filename</span>).<span class="ruby-identifier">folding_ranges</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_path_pins" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_path_pins</span><span
+            class="method-args">(path)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get an array of pins that match a path.</p>
+
+<p>@param path [String] @return [Array&lt;Solargraph::Pin::Base&gt;]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_path_pins-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 242</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_path_pins</span> <span class="ruby-identifier">path</span>
+  <span class="ruby-identifier">api_map</span>.<span class="ruby-identifier">get_path_suggestions</span>(<span class="ruby-identifier">path</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-inspect" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inspect</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="inspect-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inspect</span>
+  <span class="ruby-comment"># Let&#39;s not deal with insane data dumps in spec failures</span>
+  <span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-locate_pins" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">locate_pins</span><span
+            class="method-args">(location)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the pin at the specified location or nil if the pin does not exist.</p>
+
+<p>@param location [Location] @return [Solargraph::Pin::Base]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="locate_pins-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 230</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">locate_pins</span> <span class="ruby-identifier">location</span>
+  <span class="ruby-identifier">api_map</span>.<span class="ruby-identifier">locate_pins</span>(<span class="ruby-identifier">location</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">pin</span><span class="ruby-operator">|</span> <span class="ruby-identifier">pin</span>.<span class="ruby-identifier">realize</span>(<span class="ruby-identifier">api_map</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-locate_ref" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">locate_ref</span><span
+            class="method-args">(location)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="locate_ref-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 234</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">locate_ref</span> <span class="ruby-identifier">location</span>
+  <span class="ruby-identifier">api_map</span>.<span class="ruby-identifier">require_reference_at</span> <span class="ruby-identifier">location</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-merge" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">merge</span><span
+            class="method-args">(source)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Try to merge a source into the library&#39;s workspace. If the workspace is
+not configured to include the source, it gets ignored.</p>
+
+<p>@param source [Source] @return [Boolean] True if the source was merged into
+the workspace.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="merge-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 370</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">merge</span> <span class="ruby-identifier">source</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">mutex</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-identifier">workspace</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">source</span>)
+    <span class="ruby-ivar">@synchronized</span> = <span class="ruby-operator">!</span><span class="ruby-identifier">result</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">synchronized?</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-open-3F" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">open?</span><span
+            class="method-args">(filename)</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Library.html#method-i-attached-3F">attached?</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-path_pins" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">path_pins</span><span
+            class="method-args">(path)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param path [String] @return [Array&lt;Solargraph::Pin::Base&gt;]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="path_pins-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 284</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">path_pins</span> <span class="ruby-identifier">path</span>
+  <span class="ruby-identifier">catalog</span>
+  <span class="ruby-identifier">api_map</span>.<span class="ruby-identifier">get_path_suggestions</span>(<span class="ruby-identifier">path</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-query_symbols" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">query_symbols</span><span
+            class="method-args">(query)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get an array of all symbols in the workspace that match the query.</p>
+
+<p>@param query [String] @return [Array&lt;Pin::Base&gt;]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="query_symbols-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 264</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">query_symbols</span> <span class="ruby-identifier">query</span>
+  <span class="ruby-identifier">catalog</span>
+  <span class="ruby-identifier">api_map</span>.<span class="ruby-identifier">query_symbols</span> <span class="ruby-identifier">query</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-read_text" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">read_text</span><span
+            class="method-args">(filename)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the current text of a file in the library.</p>
+
+<p>@param filename [String] @return [String]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="read_text-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 293</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_text</span> <span class="ruby-identifier">filename</span>
+  <span class="ruby-identifier">source</span> = <span class="ruby-identifier">read</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-identifier">source</span>.<span class="ruby-identifier">code</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-references_from" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">references_from</span><span
+            class="method-args">(filename, line, column, strip: false)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param filename [String] @param line [Integer] @param column [Integer]
+@param strip [Boolean] Strip special characters from variable names @return
+[Array&lt;Solargraph::Range&gt;] @todo Take a <a
+href="Location.html">Location</a> instead of filename/line/column</p>
+          
+          
+
+          
+          <div class="method-source-code" id="references_from-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 196</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">references_from</span> <span class="ruby-identifier">filename</span>, <span class="ruby-identifier">line</span>, <span class="ruby-identifier">column</span>, <span class="ruby-value">strip:</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-comment"># checkout filename</span>
+  <span class="ruby-identifier">cursor</span> = <span class="ruby-identifier">api_map</span>.<span class="ruby-identifier">cursor_at</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-constant">Position</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">line</span>, <span class="ruby-identifier">column</span>))
+  <span class="ruby-identifier">clip</span> = <span class="ruby-identifier">api_map</span>.<span class="ruby-identifier">clip</span>(<span class="ruby-identifier">cursor</span>)
+  <span class="ruby-identifier">pins</span> = <span class="ruby-identifier">clip</span>.<span class="ruby-identifier">define</span>
+  <span class="ruby-keyword">return</span> [] <span class="ruby-keyword">if</span> <span class="ruby-identifier">pins</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">result</span> = []
+  <span class="ruby-identifier">pins</span>.<span class="ruby-identifier">uniq</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pin</span><span class="ruby-operator">|</span>
+    (<span class="ruby-identifier">workspace</span>.<span class="ruby-identifier">sources</span> <span class="ruby-operator">+</span> (<span class="ruby-ivar">@current</span> <span class="ruby-operator">?</span> [<span class="ruby-ivar">@current</span>] <span class="ruby-operator">:</span> [])).<span class="ruby-identifier">uniq</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:filename</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">source</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">found</span> = <span class="ruby-identifier">source</span>.<span class="ruby-identifier">references</span>(<span class="ruby-identifier">pin</span>.<span class="ruby-identifier">name</span>)
+      <span class="ruby-identifier">found</span>.<span class="ruby-identifier">select!</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">loc</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">referenced</span> = <span class="ruby-identifier">definitions_at</span>(<span class="ruby-identifier">loc</span>.<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">loc</span>.<span class="ruby-identifier">range</span>.<span class="ruby-identifier">ending</span>.<span class="ruby-identifier">line</span>, <span class="ruby-identifier">loc</span>.<span class="ruby-identifier">range</span>.<span class="ruby-identifier">ending</span>.<span class="ruby-identifier">character</span>)
+        <span class="ruby-comment"># HACK: The additional location comparison is necessary because</span>
+        <span class="ruby-comment"># Clip#define can return proxies for parameter pins</span>
+        <span class="ruby-identifier">referenced</span>.<span class="ruby-identifier">any?</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span> <span class="ruby-identifier">r</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">pin</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">location</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">pin</span>.<span class="ruby-identifier">location</span>}
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-comment"># HACK: for language clients that exclude special characters from the start of variable names</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">strip</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">match</span> = <span class="ruby-identifier">cursor</span>.<span class="ruby-identifier">word</span>.<span class="ruby-identifier">match</span>(<span class="ruby-regexp">/^[^a-z0-9_]+/i</span>)
+        <span class="ruby-identifier">found</span>.<span class="ruby-identifier">map!</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">loc</span><span class="ruby-operator">|</span>
+          <span class="ruby-constant">Solargraph</span><span class="ruby-operator">::</span><span class="ruby-constant">Location</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">loc</span>.<span class="ruby-identifier">filename</span>, <span class="ruby-constant">Solargraph</span><span class="ruby-operator">::</span><span class="ruby-constant">Range</span>.<span class="ruby-identifier">from_to</span>(<span class="ruby-identifier">loc</span>.<span class="ruby-identifier">range</span>.<span class="ruby-identifier">start</span>.<span class="ruby-identifier">line</span>, <span class="ruby-identifier">loc</span>.<span class="ruby-identifier">range</span>.<span class="ruby-identifier">start</span>.<span class="ruby-identifier">column</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">match</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">length</span>, <span class="ruby-identifier">loc</span>.<span class="ruby-identifier">range</span>.<span class="ruby-identifier">ending</span>.<span class="ruby-identifier">line</span>, <span class="ruby-identifier">loc</span>.<span class="ruby-identifier">range</span>.<span class="ruby-identifier">ending</span>.<span class="ruby-identifier">column</span>))
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">result</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">found</span>.<span class="ruby-identifier">sort</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">a</span>.<span class="ruby-identifier">range</span>.<span class="ruby-identifier">start</span>.<span class="ruby-identifier">line</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">range</span>.<span class="ruby-identifier">start</span>.<span class="ruby-identifier">line</span>
+      <span class="ruby-keyword">end</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">result</span>.<span class="ruby-identifier">uniq</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-search" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">search</span><span
+            class="method-args">(query)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param query [String] @return [Array&lt;String&gt;]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="search-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 255</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">search</span> <span class="ruby-identifier">query</span>
+  <span class="ruby-identifier">catalog</span>
+  <span class="ruby-identifier">api_map</span>.<span class="ruby-identifier">search</span> <span class="ruby-identifier">query</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-signatures_at" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">signatures_at</span><span
+            class="method-args">(filename, line, column)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get signature suggestions for the method at the specified file and
+location.</p>
+
+<p>@param filename [String] The file to analyze @param line [Integer] The
+zero-based line number @param column [Integer] The zero-based column number
+@return [Array&lt;Solargraph::Pin::Base&gt;] @todo Take filename/position
+instead of filename/line/column</p>
+          
+          
+
+          
+          <div class="method-source-code" id="signatures_at-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 184</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">signatures_at</span> <span class="ruby-identifier">filename</span>, <span class="ruby-identifier">line</span>, <span class="ruby-identifier">column</span>
+  <span class="ruby-identifier">position</span> = <span class="ruby-constant">Position</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">line</span>, <span class="ruby-identifier">column</span>)
+  <span class="ruby-identifier">cursor</span> = <span class="ruby-constant">Source</span><span class="ruby-operator">::</span><span class="ruby-constant">Cursor</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">read</span>(<span class="ruby-identifier">filename</span>), <span class="ruby-identifier">position</span>)
+  <span class="ruby-identifier">api_map</span>.<span class="ruby-identifier">clip</span>(<span class="ruby-identifier">cursor</span>).<span class="ruby-identifier">signify</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-synchronized-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">synchronized?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>True if the <a href="ApiMap.html">ApiMap</a> is up to date with the
+library&#39;s workspace and open files.</p>
+
+<p>@return [Boolean]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="synchronized-3F-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">synchronized?</span>
+  <span class="ruby-ivar">@synchronized</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-api_map" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">api_map</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [ApiMap]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="api_map-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 387</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">api_map</span>
+  <span class="ruby-ivar">@api_map</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Solargraph</span><span class="ruby-operator">::</span><span class="ruby-constant">ApiMap</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-bundle" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">bundle</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [Bundle]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="bundle-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 392</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bundle</span>
+  <span class="ruby-constant">Bundle</span>.<span class="ruby-identifier">new</span>(
+    <span class="ruby-value">workspace:</span> <span class="ruby-identifier">workspace</span>,
+    <span class="ruby-value">opened:</span> <span class="ruby-ivar">@current</span> <span class="ruby-operator">?</span> [<span class="ruby-ivar">@current</span>] <span class="ruby-operator">:</span> []
+  )
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mutex" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mutex</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [Mutex]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="mutex-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 382</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">mutex</span>
+  <span class="ruby-ivar">@mutex</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Mutex</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-read" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">read</span><span
+            class="method-args">(filename)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the source for an open file or create a new source if the file exists
+on disk. Sources created from disk are not added to the open workspace
+files, i.e., the version on disk remains the authoritative version.</p>
+
+<p>@raise [FileNotFoundError] if the file does not exist @param filename
+[String] @return [Solargraph::Source]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="read-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/library.rb, line 407</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read</span> <span class="ruby-identifier">filename</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@current</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@current</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@current</span>.<span class="ruby-identifier">filename</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">filename</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">FileNotFoundError</span>, <span class="ruby-node">&quot;File not found: #{filename}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">workspace</span>.<span class="ruby-identifier">has_file?</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-identifier">workspace</span>.<span class="ruby-identifier">source</span>(<span class="ruby-identifier">filename</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.0.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module Solargraph::Pin::Conversions - solargraph-0.35.0 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+  var index_rel_prefix = "../../";
+</script>
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/darkfish.js"></script>
+
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-completion_item">#completion_item</a>
+    
+    <li ><a href="#method-i-detail">#detail</a>
+    
+    <li ><a href="#method-i-generate_link">#generate_link</a>
+    
+    <li ><a href="#method-i-link_documentation">#link_documentation</a>
+    
+    <li ><a href="#method-i-reset_conversions">#reset_conversions</a>
+    
+    <li ><a href="#method-i-resolve_completion_item">#resolve_completion_item</a>
+    
+    <li ><a href="#method-i-signature_help">#signature_help</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-Solargraph::Pin::Conversions">
+  <h1 id="module-Solargraph::Pin::Conversions" class="module">
+    module Solargraph::Pin::Conversions
+  </h1>
+
+  <section class="description">
+    
+<p>@todo Move this stuff. It should be the responsibility of the language
+server.</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-completion_item" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">completion_item</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [Hash]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="completion_item-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/pin/conversions.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">completion_item</span>
+  <span class="ruby-ivar">@completion_item</span> <span class="ruby-operator">||=</span> {
+    <span class="ruby-value">label:</span> <span class="ruby-identifier">name</span>,
+    <span class="ruby-value">kind:</span> <span class="ruby-identifier">completion_item_kind</span>,
+    <span class="ruby-value">detail:</span> <span class="ruby-identifier">detail</span>,
+    <span class="ruby-value">data:</span> {
+      <span class="ruby-value">path:</span> <span class="ruby-identifier">path</span>,
+      <span class="ruby-value">return_type:</span> <span class="ruby-identifier">return_type</span>.<span class="ruby-identifier">tag</span>,
+      <span class="ruby-value">location:</span> (<span class="ruby-identifier">location</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">location</span>.<span class="ruby-identifier">to_hash</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>),
+      <span class="ruby-value">deprecated:</span> <span class="ruby-identifier">deprecated?</span>
+    }
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-detail" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">detail</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [String]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="detail-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/pin/conversions.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">detail</span>
+  <span class="ruby-comment"># This property is not cached in an instance variable because it can</span>
+  <span class="ruby-comment"># change when pins get proxied.</span>
+  <span class="ruby-identifier">detail</span> = <span class="ruby-constant">String</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">detail</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;(#{parameters.join(&#39;, &#39;)}) &quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-operator">!</span><span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Pin</span><span class="ruby-operator">::</span><span class="ruby-constant">BaseMethod</span>) <span class="ruby-keyword">or</span> <span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">detail</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;=#{probed? ? &#39;~&#39; : (proxied? ? &#39;^&#39; : &#39;&gt;&#39;)} #{return_type}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">return_type</span>.<span class="ruby-identifier">undefined?</span>
+  <span class="ruby-identifier">detail</span>.<span class="ruby-identifier">strip!</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">detail</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">detail</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-link_documentation" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">link_documentation</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get a markdown-flavored link to a documentation page.</p>
+
+<p>@return [String]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="link_documentation-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/pin/conversions.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">link_documentation</span>
+  <span class="ruby-ivar">@link_documentation</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">generate_link</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-reset_conversions" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reset_conversions</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="reset_conversions-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/pin/conversions.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">reset_conversions</span>
+  <span class="ruby-ivar">@completion_item</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@resolve_completion_item</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@signature_help</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@detail</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@link_documentation</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-resolve_completion_item" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">resolve_completion_item</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [Hash]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="resolve_completion_item-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/pin/conversions.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">resolve_completion_item</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@resolve_completion_item</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">extra</span> = {}
+    <span class="ruby-identifier">alldoc</span> = <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-comment"># alldoc += link_documentation unless link_documentation.nil?</span>
+    <span class="ruby-comment"># alldoc += &quot;\n\n&quot; unless alldoc.empty?</span>
+    <span class="ruby-identifier">alldoc</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">documentation</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">documentation</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">extra</span>[<span class="ruby-value">:documentation</span>] = <span class="ruby-identifier">alldoc</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">alldoc</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-ivar">@resolve_completion_item</span> = <span class="ruby-identifier">completion_item</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">extra</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@resolve_completion_item</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-signature_help" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">signature_help</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [Hash]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="signature_help-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/pin/conversions.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">signature_help</span>
+  <span class="ruby-ivar">@signature_help</span> <span class="ruby-operator">||=</span> {
+    <span class="ruby-value">label:</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;(&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39;, &#39;</span>) <span class="ruby-operator">+</span> <span class="ruby-string">&#39;)&#39;</span>,
+    <span class="ruby-value">documentation:</span> <span class="ruby-identifier">documentation</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-generate_link" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_link</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="generate_link-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/pin/conversions.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">generate_link</span>
+  <span class="ruby-identifier">this_path</span> = <span class="ruby-identifier">path</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">return_type</span>.<span class="ruby-identifier">tag</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">this_path</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">this_path</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;undefined&#39;</span>
+  <span class="ruby-comment"># return this_path if comments.empty?</span>
+  <span class="ruby-node">&quot;[#{this_path.gsub(&#39;_&#39;, &#39;\\\\_&#39;)}](solargraph:/document?query=#{URI.escape(this_path)})&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.0.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

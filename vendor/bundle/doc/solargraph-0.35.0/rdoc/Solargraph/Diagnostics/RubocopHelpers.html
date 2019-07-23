@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module Solargraph::Diagnostics::RubocopHelpers - solargraph-0.35.0 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+  var index_rel_prefix = "../../";
+</script>
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/darkfish.js"></script>
+
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-find_rubocop_file">#find_rubocop_file</a>
+    
+    <li ><a href="#method-i-fix_drive_letter">#fix_drive_letter</a>
+    
+    <li ><a href="#method-i-generate_options">#generate_options</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-Solargraph::Diagnostics::RubocopHelpers">
+  <h1 id="module-Solargraph::Diagnostics::RubocopHelpers" class="module">
+    module Solargraph::Diagnostics::RubocopHelpers
+  </h1>
+
+  <section class="description">
+    
+<p>Utility methods for the RuboCop diagnostics reporter.</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-find_rubocop_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_rubocop_file</span><span
+            class="method-args">(filename)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find a RuboCop configuration file in a file&#39;s directory tree.</p>
+
+<p>@param filename [String] @return [String, nil]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="find_rubocop_file-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/diagnostics/rubocop_helpers.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">find_rubocop_file</span> <span class="ruby-identifier">filename</span>
+  <span class="ruby-identifier">dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-keyword">until</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">dir</span>) <span class="ruby-operator">==</span> <span class="ruby-identifier">dir</span>
+    <span class="ruby-identifier">here</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">dir</span>, <span class="ruby-string">&#39;.rubocop.yml&#39;</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">here</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">here</span>)
+    <span class="ruby-identifier">dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">dir</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-fix_drive_letter" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fix_drive_letter</span><span
+            class="method-args">(path)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>RuboCop internally uses capitalized drive letters for Windows paths, so we
+need to convert the paths provided to the command.</p>
+
+<p>@param path [String] @return [String]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="fix_drive_letter-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/diagnostics/rubocop_helpers.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fix_drive_letter</span> <span class="ruby-identifier">path</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">path</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">path</span>.<span class="ruby-identifier">match</span>(<span class="ruby-regexp">/^[a-z]:/</span>)
+  <span class="ruby-identifier">path</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">upcase</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">path</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-generate_options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_options</span><span
+            class="method-args">(filename, code)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generate command-line options for the specified filename and code.</p>
+
+<p>@param filename [String] @param code [String] @return
+[Array(Array&lt;String&gt;, Array&lt;String&gt;)]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="generate_options-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/diagnostics/rubocop_helpers.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">generate_options</span> <span class="ruby-identifier">filename</span>, <span class="ruby-identifier">code</span>
+  <span class="ruby-identifier">args</span> = [<span class="ruby-string">&#39;-f&#39;</span>, <span class="ruby-string">&#39;j&#39;</span>]
+  <span class="ruby-identifier">rubocop_file</span> = <span class="ruby-identifier">find_rubocop_file</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-identifier">args</span>.<span class="ruby-identifier">push</span>(<span class="ruby-string">&#39;-c&#39;</span>, <span class="ruby-identifier">fix_drive_letter</span>(<span class="ruby-identifier">rubocop_file</span>)) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">rubocop_file</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">args</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">filename</span>
+  <span class="ruby-identifier">options</span>, <span class="ruby-identifier">paths</span> = <span class="ruby-constant">RuboCop</span><span class="ruby-operator">::</span><span class="ruby-constant">Options</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:stdin</span>] = <span class="ruby-identifier">code</span>
+  [<span class="ruby-identifier">options</span>, <span class="ruby-identifier">paths</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.0.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

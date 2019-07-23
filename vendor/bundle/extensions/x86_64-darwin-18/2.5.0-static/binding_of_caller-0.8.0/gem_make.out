@@ -1,0 +1,16 @@
+current directory: /Users/araikeisuke/pictgram/vendor/bundle/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+/Users/araikeisuke/.rbenv/versions/2.5.5/bin/ruby -r ./siteconf20190720-99051-w48kgf.rb extconf.rb
+
+current directory: /Users/araikeisuke/pictgram/vendor/bundle/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+make "DESTDIR=" clean
+make: *** No rule to make target `clean'.  Stop.
+
+current directory: /Users/araikeisuke/pictgram/vendor/bundle/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+make "DESTDIR="
+echo "Nada."
+Nada.
+
+current directory: /Users/araikeisuke/pictgram/vendor/bundle/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+make "DESTDIR=" install
+echo "Nada."
+Nada.

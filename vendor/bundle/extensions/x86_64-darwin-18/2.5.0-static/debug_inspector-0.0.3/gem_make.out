@@ -1,0 +1,15 @@
+current directory: /Users/araikeisuke/pictgram/vendor/bundle/gems/debug_inspector-0.0.3/ext/debug_inspector
+/Users/araikeisuke/.rbenv/versions/2.5.5/bin/ruby -r ./siteconf20190720-99051-curq40.rb extconf.rb
+creating Makefile
+
+current directory: /Users/araikeisuke/pictgram/vendor/bundle/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: /Users/araikeisuke/pictgram/vendor/bundle/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.bundle
+
+current directory: /Users/araikeisuke/pictgram/vendor/bundle/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.bundle ./.gem.20190720-99051-12sslkr

@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module Solargraph::YardMap::CoreDocs - solargraph-0.35.0 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+  var index_rel_prefix = "../../";
+</script>
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/darkfish.js"></script>
+
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-available">::available</a>
+    
+    <li ><a href="#method-c-best_download">::best_download</a>
+    
+    <li ><a href="#method-c-best_match">::best_match</a>
+    
+    <li ><a href="#method-c-cache_dir">::cache_dir</a>
+    
+    <li ><a href="#method-c-clear">::clear</a>
+    
+    <li ><a href="#method-c-download">::download</a>
+    
+    <li ><a href="#method-c-install_archive">::install_archive</a>
+    
+    <li ><a href="#method-c-require_minimum">::require_minimum</a>
+    
+    <li ><a href="#method-c-valid-3F">::valid?</a>
+    
+    <li ><a href="#method-c-versions">::versions</a>
+    
+    <li ><a href="#method-c-yardoc_file">::yardoc_file</a>
+    
+    <li ><a href="#method-c-yardoc_stdlib_file">::yardoc_stdlib_file</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-Solargraph::YardMap::CoreDocs">
+  <h1 id="module-Solargraph::YardMap::CoreDocs" class="module">
+    module Solargraph::YardMap::CoreDocs
+  </h1>
+
+  <section class="description">
+    
+<p>Tools for managing core documentation.</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="DEFAULT">DEFAULT
+        
+        <dd><p>The default core documentation version</p>
+        
+      
+        <dt id="SOURCE">SOURCE
+        
+        <dd><p>The URL for downloading core documentation</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-available" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">available</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get a list of core documentation versions that are available for download.</p>
+
+<p>@return [Array&lt;String&gt;] The version numbers</p>
+          
+          
+
+          
+          <div class="method-source-code" id="available-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/yard_map/core_docs.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">available</span>
+  <span class="ruby-identifier">uri</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-node">&quot;#{SOURCE}/versions.json&quot;</span>)
+  <span class="ruby-identifier">response</span> = <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">get_response</span>(<span class="ruby-identifier">uri</span>)
+  <span class="ruby-identifier">obj</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">response</span>.<span class="ruby-identifier">body</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">SourceNotAvailableError</span>, <span class="ruby-node">&quot;Error connecting to #{SOURCE}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">obj</span>[<span class="ruby-string">&#39;status&#39;</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;ok&#39;</span>
+  <span class="ruby-identifier">obj</span>[<span class="ruby-string">&#39;cores&#39;</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-best_download" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">best_download</span><span
+            class="method-args">(current = RUBY_VERSION)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the version number of core documentation available for download that is
+the closest match for the current Ruby version.</p>
+
+<p>@param current [String] The version to compare @return [String] The version
+number of the best match</p>
+          
+          
+
+          
+          <div class="method-source-code" id="best_download-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/yard_map/core_docs.rb, line 92</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">best_download</span> <span class="ruby-identifier">current</span> = <span class="ruby-constant">RUBY_VERSION</span>
+  <span class="ruby-identifier">rv</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Version</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">current</span>)
+  <span class="ruby-identifier">found</span> = <span class="ruby-identifier">available</span>
+  <span class="ruby-identifier">found</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ver</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">ver</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Version</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ver</span>) <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">rv</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">found</span>.<span class="ruby-identifier">last</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-best_match" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">best_match</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the version number of the installed core documentation that is the
+closest match for the current Ruby version.</p>
+
+<p>@return [String] The closest match</p>
+          
+          
+
+          
+          <div class="method-source-code" id="best_match-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/yard_map/core_docs.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">best_match</span>
+  <span class="ruby-identifier">avail</span> = <span class="ruby-identifier">versions</span>
+  <span class="ruby-identifier">cur</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Version</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">RUBY_VERSION</span>)
+  <span class="ruby-identifier">avail</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">v</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Version</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">v</span>) <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">cur</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">avail</span>.<span class="ruby-identifier">last</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-cache_dir" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cache_dir</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The directory where core documentation is installed.</p>
+
+<p>@return [String]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="cache_dir-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/yard_map/core_docs.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cache_dir</span>
+  <span class="ruby-comment"># The directory is not stored in a variable so it can be overridden</span>
+  <span class="ruby-comment"># in specs.</span>
+  <span class="ruby-constant">ENV</span>[<span class="ruby-string">&#39;SOLARGRAPH_CACHE&#39;</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">Dir</span>.<span class="ruby-identifier">home</span>, <span class="ruby-string">&#39;.solargraph&#39;</span>, <span class="ruby-string">&#39;cache&#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-clear" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">clear</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Reset the core documentation cache to the minimum requirement.</p>
+
+<p>@return [void]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="clear-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/yard_map/core_docs.rb, line 140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">clear</span>
+  <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_rf</span> <span class="ruby-identifier">cache_dir</span>, <span class="ruby-value">secure:</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">require_minimum</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-download" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">download</span><span
+            class="method-args">(version)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Download the specified version of core documentation.</p>
+
+<p>@param version [String] @return [void]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="download-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/yard_map/core_docs.rb, line 123</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">download</span> <span class="ruby-identifier">version</span>
+  <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span> <span class="ruby-identifier">cache_dir</span>
+  <span class="ruby-identifier">uri</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-node">&quot;#{SOURCE}/#{version}.tar.gz&quot;</span>)
+  <span class="ruby-comment"># @type [Net::HTTPResponse]</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">get_response</span>(<span class="ruby-identifier">uri</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;404&#39;</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Version #{version} is not available from #{SOURCE}&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">zipfile</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">cache_dir</span>, <span class="ruby-node">&quot;#{version}.tar.gz&quot;</span>)
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">binwrite</span> <span class="ruby-identifier">zipfile</span>, <span class="ruby-identifier">response</span>.<span class="ruby-identifier">body</span>
+    <span class="ruby-identifier">install_archive</span> <span class="ruby-identifier">zipfile</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-require_minimum" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">require_minimum</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ensure installation of minimum documentation.</p>
+
+<p>@return [void]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="require_minimum-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/yard_map/core_docs.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">require_minimum</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">best_match</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span> <span class="ruby-identifier">cache_dir</span>
+  <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">cp</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">Solargraph</span><span class="ruby-operator">::</span><span class="ruby-constant">YARDOC_PATH</span>, <span class="ruby-node">&quot;#{DEFAULT}.tar.gz&quot;</span>), <span class="ruby-identifier">cache_dir</span>
+  <span class="ruby-identifier">install_archive</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">cache_dir</span>, <span class="ruby-node">&quot;#{DEFAULT}.tar.gz&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-valid-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">valid?</span><span
+            class="method-args">(ver)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>True if core documentation is installed for the specified version number.</p>
+
+<p>@param ver [String] The version number to check @return [Boolean]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="valid-3F-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/yard_map/core_docs.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">valid?</span>(<span class="ruby-identifier">ver</span>)
+  <span class="ruby-identifier">dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">cache_dir</span>, <span class="ruby-identifier">ver</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">dir</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">dir</span>, <span class="ruby-string">&#39;yardoc&#39;</span>))
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">dir</span>, <span class="ruby-string">&#39;yardoc-stdlib&#39;</span>))
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-versions" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">versions</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get a list of version numbers for currently installed core documentation.</p>
+
+<p>@return [Array&lt;String&gt;] The installed version numbers</p>
+          
+          
+
+          
+          <div class="method-source-code" id="versions-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/yard_map/core_docs.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">versions</span>
+  <span class="ruby-identifier">dirs</span> = <span class="ruby-constant">Dir</span>[<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">cache_dir</span>, <span class="ruby-string">&#39;*&#39;</span>)].<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">d</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">d</span>)}
+  <span class="ruby-identifier">dirs</span>.<span class="ruby-identifier">keep_if</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">d</span><span class="ruby-operator">|</span> <span class="ruby-identifier">valid?</span>(<span class="ruby-identifier">d</span>)}
+  <span class="ruby-identifier">dirs</span>.<span class="ruby-identifier">sort!</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Version</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">b</span>) <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Version</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">a</span>)}
+  <span class="ruby-identifier">dirs</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-yardoc_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">yardoc_file</span><span
+            class="method-args">(ver = best_match)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the path to a yardoc file for Ruby core documentation.</p>
+
+<p>@param ver [String] The version number (best match is default) @return
+[String] The path to the yardoc</p>
+          
+          
+
+          
+          <div class="method-source-code" id="yardoc_file-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/yard_map/core_docs.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">yardoc_file</span>(<span class="ruby-identifier">ver</span> = <span class="ruby-identifier">best_match</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Invalid core yardoc version #{ver}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">valid?</span>(<span class="ruby-identifier">ver</span>)
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">cache_dir</span>, <span class="ruby-identifier">ver</span>, <span class="ruby-string">&#39;yardoc&#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-yardoc_stdlib_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">yardoc_stdlib_file</span><span
+            class="method-args">(ver = best_match)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the path to a yardoc file for Ruby stdlib documentation.</p>
+
+<p>@param ver [String] The version number (best match is default) @return
+[String] The path to the yardoc</p>
+          
+          
+
+          
+          <div class="method-source-code" id="yardoc_stdlib_file-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/yard_map/core_docs.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">yardoc_stdlib_file</span>(<span class="ruby-identifier">ver</span> = <span class="ruby-identifier">best_match</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Invalid core yardoc version #{ver}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">valid?</span>(<span class="ruby-identifier">ver</span>)
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">cache_dir</span>, <span class="ruby-identifier">ver</span>, <span class="ruby-string">&#39;yardoc-stdlib&#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-install_archive" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">install_archive</span><span
+            class="method-args">(filename)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Extract the specified archive to the core cache directory.</p>
+
+<p>@param filename [String] @return [void]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="install_archive-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/yard_map/core_docs.rb, line 151</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">install_archive</span> <span class="ruby-identifier">filename</span>
+  <span class="ruby-identifier">tar_extract</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Package</span><span class="ruby-operator">::</span><span class="ruby-constant">TarReader</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Zlib</span><span class="ruby-operator">::</span><span class="ruby-constant">GzipReader</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>))
+  <span class="ruby-identifier">tar_extract</span>.<span class="ruby-identifier">rewind</span>
+  <span class="ruby-identifier">tar_extract</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">entry</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">entry</span>.<span class="ruby-identifier">directory?</span>
+      <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">cache_dir</span>, <span class="ruby-identifier">entry</span>.<span class="ruby-identifier">full_name</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">cache_dir</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">entry</span>.<span class="ruby-identifier">full_name</span>))
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">cache_dir</span>, <span class="ruby-identifier">entry</span>.<span class="ruby-identifier">full_name</span>), <span class="ruby-string">&#39;wb&#39;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">f</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">entry</span>.<span class="ruby-identifier">read</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">tar_extract</span>.<span class="ruby-identifier">close</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.0.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

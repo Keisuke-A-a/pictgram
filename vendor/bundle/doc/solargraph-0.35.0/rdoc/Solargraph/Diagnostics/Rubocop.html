@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Solargraph::Diagnostics::Rubocop - solargraph-0.35.0 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+  var index_rel_prefix = "../../";
+</script>
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/darkfish.js"></script>
+
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="Base.html">Solargraph::Diagnostics::Base</a>
+  
+</div>
+
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="RubocopHelpers.html">Solargraph::Diagnostics::RubocopHelpers</a>
+  
+  
+  </ul>
+</div>
+
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-diagnose">#diagnose</a>
+    
+    <li ><a href="#method-i-make_array">#make_array</a>
+    
+    <li ><a href="#method-i-offense_ending_position">#offense_ending_position</a>
+    
+    <li ><a href="#method-i-offense_range">#offense_range</a>
+    
+    <li ><a href="#method-i-offense_start_position">#offense_start_position</a>
+    
+    <li ><a href="#method-i-offense_to_diagnostic">#offense_to_diagnostic</a>
+    
+    <li ><a href="#method-i-redirect_stdout">#redirect_stdout</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Solargraph::Diagnostics::Rubocop">
+  <h1 id="class-Solargraph::Diagnostics::Rubocop" class="class">
+    class Solargraph::Diagnostics::Rubocop
+  </h1>
+
+  <section class="description">
+    
+<p>This reporter provides linting through RuboCop.</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="SEVERITIES">SEVERITIES
+        
+        <dd><p>Conversion of RuboCop severity names to LSP constants</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-diagnose" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">diagnose</span><span
+            class="method-args">(source, _api_map)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param source [Solargraph::Source] @param _api_map [Solargraph::ApiMap]
+@return [Array&lt;Hash&gt;]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="diagnose-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/diagnostics/rubocop.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">diagnose</span> <span class="ruby-identifier">source</span>, <span class="ruby-identifier">_api_map</span>
+  <span class="ruby-identifier">options</span>, <span class="ruby-identifier">paths</span> = <span class="ruby-identifier">generate_options</span>(<span class="ruby-identifier">source</span>.<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">source</span>.<span class="ruby-identifier">code</span>)
+  <span class="ruby-identifier">runner</span> = <span class="ruby-constant">RuboCop</span><span class="ruby-operator">::</span><span class="ruby-constant">Runner</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>, <span class="ruby-constant">RuboCop</span><span class="ruby-operator">::</span><span class="ruby-constant">ConfigStore</span>.<span class="ruby-identifier">new</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">redirect_stdout</span>{ <span class="ruby-identifier">runner</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">paths</span>) }
+  <span class="ruby-identifier">make_array</span> <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">result</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">RuboCop</span><span class="ruby-operator">::</span><span class="ruby-constant">ValidationError</span>, <span class="ruby-constant">RuboCop</span><span class="ruby-operator">::</span><span class="ruby-constant">ConfigNotFoundError</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">DiagnosticsError</span>, <span class="ruby-node">&quot;Error in RuboCop configuration: #{e.message}&quot;</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">JSON</span><span class="ruby-operator">::</span><span class="ruby-constant">ParserError</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">DiagnosticsError</span>, <span class="ruby-string">&#39;RuboCop returned invalid data&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-make_array" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">make_array</span><span
+            class="method-args">(resp)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param resp [Hash] @return [Array&lt;Hash&gt;]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="make_array-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/diagnostics/rubocop.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">make_array</span> <span class="ruby-identifier">resp</span>
+  <span class="ruby-identifier">diagnostics</span> = []
+  <span class="ruby-identifier">resp</span>[<span class="ruby-string">&#39;files&#39;</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">file</span>[<span class="ruby-string">&#39;offenses&#39;</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">off</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">diagnostics</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">offense_to_diagnostic</span>(<span class="ruby-identifier">off</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">diagnostics</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-offense_ending_position" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">offense_ending_position</span><span
+            class="method-args">(off)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param off [Hash] @return [Position]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="offense_ending_position-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/diagnostics/rubocop.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">offense_ending_position</span> <span class="ruby-identifier">off</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">off</span>[<span class="ruby-string">&#39;location&#39;</span>][<span class="ruby-string">&#39;start_line&#39;</span>] <span class="ruby-operator">!=</span> <span class="ruby-identifier">off</span>[<span class="ruby-string">&#39;location&#39;</span>][<span class="ruby-string">&#39;last_line&#39;</span>]
+    <span class="ruby-constant">Position</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">off</span>[<span class="ruby-string">&#39;location&#39;</span>][<span class="ruby-string">&#39;start_line&#39;</span>], <span class="ruby-value">0</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">Position</span>.<span class="ruby-identifier">new</span>(
+      <span class="ruby-identifier">off</span>[<span class="ruby-string">&#39;location&#39;</span>][<span class="ruby-string">&#39;start_line&#39;</span>] <span class="ruby-operator">-</span> <span class="ruby-value">1</span>, <span class="ruby-identifier">off</span>[<span class="ruby-string">&#39;location&#39;</span>][<span class="ruby-string">&#39;last_column&#39;</span>]
+    )
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-offense_range" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">offense_range</span><span
+            class="method-args">(off)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param off [Hash] @return [Range]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="offense_range-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/diagnostics/rubocop.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">offense_range</span> <span class="ruby-identifier">off</span>
+  <span class="ruby-constant">Range</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">offense_start_position</span>(<span class="ruby-identifier">off</span>), <span class="ruby-identifier">offense_ending_position</span>(<span class="ruby-identifier">off</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-offense_start_position" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">offense_start_position</span><span
+            class="method-args">(off)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param off [Hash] @return [Position]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="offense_start_position-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/diagnostics/rubocop.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">offense_start_position</span> <span class="ruby-identifier">off</span>
+  <span class="ruby-constant">Position</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">off</span>[<span class="ruby-string">&#39;location&#39;</span>][<span class="ruby-string">&#39;start_line&#39;</span>] <span class="ruby-operator">-</span> <span class="ruby-value">1</span>, <span class="ruby-identifier">off</span>[<span class="ruby-string">&#39;location&#39;</span>][<span class="ruby-string">&#39;start_column&#39;</span>] <span class="ruby-operator">-</span> <span class="ruby-value">1</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-offense_to_diagnostic" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">offense_to_diagnostic</span><span
+            class="method-args">(off)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Convert a RuboCop offense to an LSP diagnostic</p>
+
+<p>@param off [Hash] Offense received from <a href="Rubocop.html">Rubocop</a>
+@return [Hash] LSP diagnostic</p>
+          
+          
+
+          
+          <div class="method-source-code" id="offense_to_diagnostic-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/diagnostics/rubocop.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">offense_to_diagnostic</span> <span class="ruby-identifier">off</span>
+  {
+    <span class="ruby-value">range:</span> <span class="ruby-identifier">offense_range</span>(<span class="ruby-identifier">off</span>).<span class="ruby-identifier">to_hash</span>,
+    <span class="ruby-comment"># 1 = Error, 2 = Warning, 3 = Information, 4 = Hint</span>
+    <span class="ruby-value">severity:</span> <span class="ruby-constant">SEVERITIES</span>[<span class="ruby-identifier">off</span>[<span class="ruby-string">&#39;severity&#39;</span>]],
+    <span class="ruby-value">source:</span> <span class="ruby-identifier">off</span>[<span class="ruby-string">&#39;cop_name&#39;</span>],
+    <span class="ruby-value">message:</span> <span class="ruby-identifier">off</span>[<span class="ruby-string">&#39;message&#39;</span>].<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/^#{off[&#39;cop_name&#39;]}\:/</span>, <span class="ruby-string">&#39;&#39;</span>)
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-redirect_stdout" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">redirect_stdout</span><span
+            class="method-args">() { || ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@todo This is a smelly way to redirect output, but the RuboCop specs do</p>
+
+<pre>the same thing.</pre>
+
+<p>@return [String]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="redirect_stdout-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/diagnostics/rubocop.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">redirect_stdout</span>
+  <span class="ruby-identifier">redir</span> = <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">$stdout</span> = <span class="ruby-identifier">redir</span>
+  <span class="ruby-keyword">yield</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+  <span class="ruby-identifier">$stdout</span> = <span class="ruby-constant">STDOUT</span>
+  <span class="ruby-identifier">redir</span>.<span class="ruby-identifier">string</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.0.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

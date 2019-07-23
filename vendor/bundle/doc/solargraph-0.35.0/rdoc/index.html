@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>solargraph-0.35.0 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <div id="classindex-section" class="nav-section">
+  <h3>Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./File.html">File</a>
+  
+    <li><a href="./Solargraph.html">Solargraph</a>
+  
+    <li><a href="./Solargraph/ApiMap.html">Solargraph::ApiMap</a>
+  
+    <li><a href="./Solargraph/ApiMap/BundlerMethods.html">Solargraph::ApiMap::BundlerMethods</a>
+  
+    <li><a href="./Solargraph/ApiMap/Cache.html">Solargraph::ApiMap::Cache</a>
+  
+    <li><a href="./Solargraph/ApiMap/SourceToYard.html">Solargraph::ApiMap::SourceToYard</a>
+  
+    <li><a href="./Solargraph/ApiMap/Store.html">Solargraph::ApiMap::Store</a>
+  
+    <li><a href="./Solargraph/Bundle.html">Solargraph::Bundle</a>
+  
+    <li><a href="./Solargraph/BundleNotFoundError.html">Solargraph::BundleNotFoundError</a>
+  
+    <li><a href="./Solargraph/ComplexType.html">Solargraph::ComplexType</a>
+  
+    <li><a href="./Solargraph/ComplexType/TypeMethods.html">Solargraph::ComplexType::TypeMethods</a>
+  
+    <li><a href="./Solargraph/ComplexType/UniqueType.html">Solargraph::ComplexType::UniqueType</a>
+  
+    <li><a href="./Solargraph/ComplexTypeError.html">Solargraph::ComplexTypeError</a>
+  
+    <li><a href="./Solargraph/Convention.html">Solargraph::Convention</a>
+  
+    <li><a href="./Solargraph/Convention/Base.html">Solargraph::Convention::Base</a>
+  
+    <li><a href="./Solargraph/Convention/Gemfile.html">Solargraph::Convention::Gemfile</a>
+  
+    <li><a href="./Solargraph/Convention/Gemspec.html">Solargraph::Convention::Gemspec</a>
+  
+    <li><a href="./Solargraph/Convention/Rspec.html">Solargraph::Convention::Rspec</a>
+  
+    <li><a href="./Solargraph/CoreFills.html">Solargraph::CoreFills</a>
+  
+    <li><a href="./Solargraph/Diagnostics.html">Solargraph::Diagnostics</a>
+  
+    <li><a href="./Solargraph/Diagnostics/Base.html">Solargraph::Diagnostics::Base</a>
+  
+    <li><a href="./Solargraph/Diagnostics/RequireNotFound.html">Solargraph::Diagnostics::RequireNotFound</a>
+  
+    <li><a href="./Solargraph/Diagnostics/Rubocop.html">Solargraph::Diagnostics::Rubocop</a>
+  
+    <li><a href="./Solargraph/Diagnostics/RubocopHelpers.html">Solargraph::Diagnostics::RubocopHelpers</a>
+  
+    <li><a href="./Solargraph/Diagnostics/Severities.html">Solargraph::Diagnostics::Severities</a>
+  
+    <li><a href="./Solargraph/Diagnostics/TypeCheck.html">Solargraph::Diagnostics::TypeCheck</a>
+  
+    <li><a href="./Solargraph/Diagnostics/UpdateErrors.html">Solargraph::Diagnostics::UpdateErrors</a>
+  
+    <li><a href="./Solargraph/DiagnosticsError.html">Solargraph::DiagnosticsError</a>
+  
+    <li><a href="./Solargraph/Documentor.html">Solargraph::Documentor</a>
+  
+    <li><a href="./Solargraph/DomainDirective.html">Solargraph::DomainDirective</a>
+  
+    <li><a href="./Solargraph/Environ.html">Solargraph::Environ</a>
+  
+    <li><a href="./Solargraph/FileNotFoundError.html">Solargraph::FileNotFoundError</a>
+  
+    <li><a href="./Solargraph/InvalidOffsetError.html">Solargraph::InvalidOffsetError</a>
+  
+    <li><a href="./Solargraph/LanguageServer.html">Solargraph::LanguageServer</a>
+  
+    <li><a href="./Solargraph/LanguageServer/CompletionItemKinds.html">Solargraph::LanguageServer::CompletionItemKinds</a>
+  
+    <li><a href="./Solargraph/LanguageServer/ErrorCodes.html">Solargraph::LanguageServer::ErrorCodes</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Host.html">Solargraph::LanguageServer::Host</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Host/Cataloger.html">Solargraph::LanguageServer::Host::Cataloger</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Host/Diagnoser.html">Solargraph::LanguageServer::Host::Diagnoser</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Host/Dispatch.html">Solargraph::LanguageServer::Host::Dispatch</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Host/Sources.html">Solargraph::LanguageServer::Host::Sources</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message.html">Solargraph::LanguageServer::Message</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/Base.html">Solargraph::LanguageServer::Message::Base</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/CancelRequest.html">Solargraph::LanguageServer::Message::CancelRequest</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/Client.html">Solargraph::LanguageServer::Message::Client</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/Client/RegisterCapability.html">Solargraph::LanguageServer::Message::Client::RegisterCapability</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/CompletionItem.html">Solargraph::LanguageServer::Message::CompletionItem</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/CompletionItem/Resolve.html">Solargraph::LanguageServer::Message::CompletionItem::Resolve</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/ExitNotification.html">Solargraph::LanguageServer::Message::ExitNotification</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/Extended.html">Solargraph::LanguageServer::Message::Extended</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/Extended/CheckGemVersion.html">Solargraph::LanguageServer::Message::Extended::CheckGemVersion</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/Extended/Document.html">Solargraph::LanguageServer::Message::Extended::Document</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/Extended/DocumentGems.html">Solargraph::LanguageServer::Message::Extended::DocumentGems</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/Extended/DownloadCore.html">Solargraph::LanguageServer::Message::Extended::DownloadCore</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/Extended/Environment.html">Solargraph::LanguageServer::Message::Extended::Environment</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/Extended/Search.html">Solargraph::LanguageServer::Message::Extended::Search</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/Initialize.html">Solargraph::LanguageServer::Message::Initialize</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/Initialized.html">Solargraph::LanguageServer::Message::Initialized</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/MethodNotFound.html">Solargraph::LanguageServer::Message::MethodNotFound</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/MethodNotImplemented.html">Solargraph::LanguageServer::Message::MethodNotImplemented</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/Shutdown.html">Solargraph::LanguageServer::Message::Shutdown</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/TextDocument.html">Solargraph::LanguageServer::Message::TextDocument</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/TextDocument/Base.html">Solargraph::LanguageServer::Message::TextDocument::Base</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/TextDocument/CodeAction.html">Solargraph::LanguageServer::Message::TextDocument::CodeAction</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/TextDocument/Completion.html">Solargraph::LanguageServer::Message::TextDocument::Completion</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/TextDocument/Definition.html">Solargraph::LanguageServer::Message::TextDocument::Definition</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/TextDocument/DidChange.html">Solargraph::LanguageServer::Message::TextDocument::DidChange</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/TextDocument/DidClose.html">Solargraph::LanguageServer::Message::TextDocument::DidClose</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/TextDocument/DidOpen.html">Solargraph::LanguageServer::Message::TextDocument::DidOpen</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/TextDocument/DidSave.html">Solargraph::LanguageServer::Message::TextDocument::DidSave</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/TextDocument/DocumentSymbol.html">Solargraph::LanguageServer::Message::TextDocument::DocumentSymbol</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/TextDocument/FoldingRange.html">Solargraph::LanguageServer::Message::TextDocument::FoldingRange</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/TextDocument/Formatting.html">Solargraph::LanguageServer::Message::TextDocument::Formatting</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/TextDocument/Hover.html">Solargraph::LanguageServer::Message::TextDocument::Hover</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/TextDocument/OnTypeFormatting.html">Solargraph::LanguageServer::Message::TextDocument::OnTypeFormatting</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/TextDocument/PrepareRename.html">Solargraph::LanguageServer::Message::TextDocument::PrepareRename</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/TextDocument/References.html">Solargraph::LanguageServer::Message::TextDocument::References</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/TextDocument/Rename.html">Solargraph::LanguageServer::Message::TextDocument::Rename</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/TextDocument/SignatureHelp.html">Solargraph::LanguageServer::Message::TextDocument::SignatureHelp</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/Workspace.html">Solargraph::LanguageServer::Message::Workspace</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/Workspace/DidChangeConfiguration.html">Solargraph::LanguageServer::Message::Workspace::DidChangeConfiguration</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/Workspace/DidChangeWatchedFiles.html">Solargraph::LanguageServer::Message::Workspace::DidChangeWatchedFiles</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/Workspace/DidChangeWorkspaceFolders.html">Solargraph::LanguageServer::Message::Workspace::DidChangeWorkspaceFolders</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Message/Workspace/WorkspaceSymbol.html">Solargraph::LanguageServer::Message::Workspace::WorkspaceSymbol</a>
+  
+    <li><a href="./Solargraph/LanguageServer/MessageTypes.html">Solargraph::LanguageServer::MessageTypes</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Request.html">Solargraph::LanguageServer::Request</a>
+  
+    <li><a href="./Solargraph/LanguageServer/SymbolKinds.html">Solargraph::LanguageServer::SymbolKinds</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Transport.html">Solargraph::LanguageServer::Transport</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Transport/Adapter.html">Solargraph::LanguageServer::Transport::Adapter</a>
+  
+    <li><a href="./Solargraph/LanguageServer/Transport/DataReader.html">Solargraph::LanguageServer::Transport::DataReader</a>
+  
+    <li><a href="./Solargraph/LanguageServer/UriHelpers.html">Solargraph::LanguageServer::UriHelpers</a>
+  
+    <li><a href="./Solargraph/Library.html">Solargraph::Library</a>
+  
+    <li><a href="./Solargraph/Location.html">Solargraph::Location</a>
+  
+    <li><a href="./Solargraph/Logging.html">Solargraph::Logging</a>
+  
+    <li><a href="./Solargraph/Page.html">Solargraph::Page</a>
+  
+    <li><a href="./Solargraph/Page/Binder.html">Solargraph::Page::Binder</a>
+  
+    <li><a href="./Solargraph/Pin.html">Solargraph::Pin</a>
+  
+    <li><a href="./Solargraph/Pin/Attribute.html">Solargraph::Pin::Attribute</a>
+  
+    <li><a href="./Solargraph/Pin/Base.html">Solargraph::Pin::Base</a>
+  
+    <li><a href="./Solargraph/Pin/BaseMethod.html">Solargraph::Pin::BaseMethod</a>
+  
+    <li><a href="./Solargraph/Pin/BaseVariable.html">Solargraph::Pin::BaseVariable</a>
+  
+    <li><a href="./Solargraph/Pin/Block.html">Solargraph::Pin::Block</a>
+  
+    <li><a href="./Solargraph/Pin/ClassVariable.html">Solargraph::Pin::ClassVariable</a>
+  
+    <li><a href="./Solargraph/Pin/Closure.html">Solargraph::Pin::Closure</a>
+  
+    <li><a href="./Solargraph/Pin/Common.html">Solargraph::Pin::Common</a>
+  
+    <li><a href="./Solargraph/Pin/Constant.html">Solargraph::Pin::Constant</a>
+  
+    <li><a href="./Solargraph/Pin/Conversions.html">Solargraph::Pin::Conversions</a>
+  
+    <li><a href="./Solargraph/Pin/Documenting.html">Solargraph::Pin::Documenting</a>
+  
+    <li><a href="./Solargraph/Pin/DuckMethod.html">Solargraph::Pin::DuckMethod</a>
+  
+    <li><a href="./Solargraph/Pin/GlobalVariable.html">Solargraph::Pin::GlobalVariable</a>
+  
+    <li><a href="./Solargraph/Pin/InstanceVariable.html">Solargraph::Pin::InstanceVariable</a>
+  
+    <li><a href="./Solargraph/Pin/Keyword.html">Solargraph::Pin::Keyword</a>
+  
+    <li><a href="./Solargraph/Pin/KeywordParam.html">Solargraph::Pin::KeywordParam</a>
+  
+    <li><a href="./Solargraph/Pin/LocalVariable.html">Solargraph::Pin::LocalVariable</a>
+  
+    <li><a href="./Solargraph/Pin/Localized.html">Solargraph::Pin::Localized</a>
+  
+    <li><a href="./Solargraph/Pin/Method.html">Solargraph::Pin::Method</a>
+  
+    <li><a href="./Solargraph/Pin/MethodAlias.html">Solargraph::Pin::MethodAlias</a>
+  
+    <li><a href="./Solargraph/Pin/Namespace.html">Solargraph::Pin::Namespace</a>
+  
+    <li><a href="./Solargraph/Pin/Parameter.html">Solargraph::Pin::Parameter</a>
+  
+    <li><a href="./Solargraph/Pin/ProxyType.html">Solargraph::Pin::ProxyType</a>
+  
+    <li><a href="./Solargraph/Pin/Reference.html">Solargraph::Pin::Reference</a>
+  
+    <li><a href="./Solargraph/Pin/Reference/Extend.html">Solargraph::Pin::Reference::Extend</a>
+  
+    <li><a href="./Solargraph/Pin/Reference/Include.html">Solargraph::Pin::Reference::Include</a>
+  
+    <li><a href="./Solargraph/Pin/Reference/Override.html">Solargraph::Pin::Reference::Override</a>
+  
+    <li><a href="./Solargraph/Pin/Reference/Require.html">Solargraph::Pin::Reference::Require</a>
+  
+    <li><a href="./Solargraph/Pin/Reference/Superclass.html">Solargraph::Pin::Reference::Superclass</a>
+  
+    <li><a href="./Solargraph/Pin/Singleton.html">Solargraph::Pin::Singleton</a>
+  
+    <li><a href="./Solargraph/Pin/Symbol.html">Solargraph::Pin::Symbol</a>
+  
+    <li><a href="./Solargraph/Pin/YardPin.html">Solargraph::Pin::YardPin</a>
+  
+    <li><a href="./Solargraph/Pin/YardPin/Constant.html">Solargraph::Pin::YardPin::Constant</a>
+  
+    <li><a href="./Solargraph/Pin/YardPin/Method.html">Solargraph::Pin::YardPin::Method</a>
+  
+    <li><a href="./Solargraph/Pin/YardPin/Namespace.html">Solargraph::Pin::YardPin::Namespace</a>
+  
+    <li><a href="./Solargraph/Pin/YardPin/YardMixin.html">Solargraph::Pin::YardPin::YardMixin</a>
+  
+    <li><a href="./Solargraph/Position.html">Solargraph::Position</a>
+  
+    <li><a href="./Solargraph/Range.html">Solargraph::Range</a>
+  
+    <li><a href="./Solargraph/ServerMethods.html">Solargraph::ServerMethods</a>
+  
+    <li><a href="./Solargraph/Shell.html">Solargraph::Shell</a>
+  
+    <li><a href="./Solargraph/Source.html">Solargraph::Source</a>
+  
+    <li><a href="./Solargraph/Source/Chain.html">Solargraph::Source::Chain</a>
+  
+    <li><a href="./Solargraph/Source/Chain/BlockVariable.html">Solargraph::Source::Chain::BlockVariable</a>
+  
+    <li><a href="./Solargraph/Source/Chain/Call.html">Solargraph::Source::Chain::Call</a>
+  
+    <li><a href="./Solargraph/Source/Chain/ClassVariable.html">Solargraph::Source::Chain::ClassVariable</a>
+  
+    <li><a href="./Solargraph/Source/Chain/Constant.html">Solargraph::Source::Chain::Constant</a>
+  
+    <li><a href="./Solargraph/Source/Chain/GlobalVariable.html">Solargraph::Source::Chain::GlobalVariable</a>
+  
+    <li><a href="./Solargraph/Source/Chain/Head.html">Solargraph::Source::Chain::Head</a>
+  
+    <li><a href="./Solargraph/Source/Chain/InstanceVariable.html">Solargraph::Source::Chain::InstanceVariable</a>
+  
+    <li><a href="./Solargraph/Source/Chain/Link.html">Solargraph::Source::Chain::Link</a>
+  
+    <li><a href="./Solargraph/Source/Chain/Literal.html">Solargraph::Source::Chain::Literal</a>
+  
+    <li><a href="./Solargraph/Source/Chain/Or.html">Solargraph::Source::Chain::Or</a>
+  
+    <li><a href="./Solargraph/Source/Chain/Variable.html">Solargraph::Source::Chain::Variable</a>
+  
+    <li><a href="./Solargraph/Source/Change.html">Solargraph::Source::Change</a>
+  
+    <li><a href="./Solargraph/Source/Cursor.html">Solargraph::Source::Cursor</a>
+  
+    <li><a href="./Solargraph/Source/EncodingFixes.html">Solargraph::Source::EncodingFixes</a>
+  
+    <li><a href="./Solargraph/Source/FlawedBuilder.html">Solargraph::Source::FlawedBuilder</a>
+  
+    <li><a href="./Solargraph/Source/NodeChainer.html">Solargraph::Source::NodeChainer</a>
+  
+    <li><a href="./Solargraph/Source/NodeMethods.html">Solargraph::Source::NodeMethods</a>
+  
+    <li><a href="./Solargraph/Source/NodeMethods/DeepInference.html">Solargraph::Source::NodeMethods::DeepInference</a>
+  
+    <li><a href="./Solargraph/Source/SourceChainer.html">Solargraph::Source::SourceChainer</a>
+  
+    <li><a href="./Solargraph/Source/Updater.html">Solargraph::Source::Updater</a>
+  
+    <li><a href="./Solargraph/SourceMap.html">Solargraph::SourceMap</a>
+  
+    <li><a href="./Solargraph/SourceMap/Clip.html">Solargraph::SourceMap::Clip</a>
+  
+    <li><a href="./Solargraph/SourceMap/Completion.html">Solargraph::SourceMap::Completion</a>
+  
+    <li><a href="./Solargraph/SourceMap/Mapper.html">Solargraph::SourceMap::Mapper</a>
+  
+    <li><a href="./Solargraph/SourceMap/NodeProcessor.html">Solargraph::SourceMap::NodeProcessor</a>
+  
+    <li><a href="./Solargraph/SourceMap/NodeProcessor/AliasNode.html">Solargraph::SourceMap::NodeProcessor::AliasNode</a>
+  
+    <li><a href="./Solargraph/SourceMap/NodeProcessor/ArgsNode.html">Solargraph::SourceMap::NodeProcessor::ArgsNode</a>
+  
+    <li><a href="./Solargraph/SourceMap/NodeProcessor/Base.html">Solargraph::SourceMap::NodeProcessor::Base</a>
+  
+    <li><a href="./Solargraph/SourceMap/NodeProcessor/BeginNode.html">Solargraph::SourceMap::NodeProcessor::BeginNode</a>
+  
+    <li><a href="./Solargraph/SourceMap/NodeProcessor/BlockNode.html">Solargraph::SourceMap::NodeProcessor::BlockNode</a>
+  
+    <li><a href="./Solargraph/SourceMap/NodeProcessor/CasgnNode.html">Solargraph::SourceMap::NodeProcessor::CasgnNode</a>
+  
+    <li><a href="./Solargraph/SourceMap/NodeProcessor/CvasgnNode.html">Solargraph::SourceMap::NodeProcessor::CvasgnNode</a>
+  
+    <li><a href="./Solargraph/SourceMap/NodeProcessor/DefNode.html">Solargraph::SourceMap::NodeProcessor::DefNode</a>
+  
+    <li><a href="./Solargraph/SourceMap/NodeProcessor/DefsNode.html">Solargraph::SourceMap::NodeProcessor::DefsNode</a>
+  
+    <li><a href="./Solargraph/SourceMap/NodeProcessor/GvasgnNode.html">Solargraph::SourceMap::NodeProcessor::GvasgnNode</a>
+  
+    <li><a href="./Solargraph/SourceMap/NodeProcessor/IvasgnNode.html">Solargraph::SourceMap::NodeProcessor::IvasgnNode</a>
+  
+    <li><a href="./Solargraph/SourceMap/NodeProcessor/LvasgnNode.html">Solargraph::SourceMap::NodeProcessor::LvasgnNode</a>
+  
+    <li><a href="./Solargraph/SourceMap/NodeProcessor/NamespaceNode.html">Solargraph::SourceMap::NodeProcessor::NamespaceNode</a>
+  
+    <li><a href="./Solargraph/SourceMap/NodeProcessor/OrasgnNode.html">Solargraph::SourceMap::NodeProcessor::OrasgnNode</a>
+  
+    <li><a href="./Solargraph/SourceMap/NodeProcessor/ResbodyNode.html">Solargraph::SourceMap::NodeProcessor::ResbodyNode</a>
+  
+    <li><a href="./Solargraph/SourceMap/NodeProcessor/SclassNode.html">Solargraph::SourceMap::NodeProcessor::SclassNode</a>
+  
+    <li><a href="./Solargraph/SourceMap/NodeProcessor/SendNode.html">Solargraph::SourceMap::NodeProcessor::SendNode</a>
+  
+    <li><a href="./Solargraph/SourceMap/NodeProcessor/SymNode.html">Solargraph::SourceMap::NodeProcessor::SymNode</a>
+  
+    <li><a href="./Solargraph/SourceMap/Region.html">Solargraph::SourceMap::Region</a>
+  
+    <li><a href="./Solargraph/SourceNotAvailableError.html">Solargraph::SourceNotAvailableError</a>
+  
+    <li><a href="./Solargraph/TypeChecker.html">Solargraph::TypeChecker</a>
+  
+    <li><a href="./Solargraph/TypeChecker/ParamDef.html">Solargraph::TypeChecker::ParamDef</a>
+  
+    <li><a href="./Solargraph/TypeChecker/Problem.html">Solargraph::TypeChecker::Problem</a>
+  
+    <li><a href="./Solargraph/Workspace.html">Solargraph::Workspace</a>
+  
+    <li><a href="./Solargraph/Workspace/Config.html">Solargraph::Workspace::Config</a>
+  
+    <li><a href="./Solargraph/WorkspaceTooLargeError.html">Solargraph::WorkspaceTooLargeError</a>
+  
+    <li><a href="./Solargraph/YardMap.html">Solargraph::YardMap</a>
+  
+    <li><a href="./Solargraph/YardMap/Cache.html">Solargraph::YardMap::Cache</a>
+  
+    <li><a href="./Solargraph/YardMap/CoreDocs.html">Solargraph::YardMap::CoreDocs</a>
+  
+    <li><a href="./Solargraph/YardMap/CoreGen.html">Solargraph::YardMap::CoreGen</a>
+  
+    <li><a href="./Solargraph/YardMap/Mapper.html">Solargraph::YardMap::Mapper</a>
+  
+    <li><a href="./Solargraph/YardMap/RdocToYard.html">Solargraph::YardMap::RdocToYard</a>
+  
+    <li><a href="./YARD.html">YARD</a>
+  
+    <li><a href="./YARD/Tags.html">YARD::Tags</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main">
+<p>This is the API documentation for solargraph-0.35.0 Documentation.
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.0.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

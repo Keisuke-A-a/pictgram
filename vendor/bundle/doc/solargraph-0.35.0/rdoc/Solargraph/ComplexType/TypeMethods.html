@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module Solargraph::ComplexType::TypeMethods - solargraph-0.35.0 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+  var index_rel_prefix = "../../";
+</script>
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/darkfish.js"></script>
+
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-3D-3D">#==</a>
+    
+    <li ><a href="#method-i-defined-3F">#defined?</a>
+    
+    <li ><a href="#method-i-duck_type-3F">#duck_type?</a>
+    
+    <li ><a href="#method-i-fixed_parameters-3F">#fixed_parameters?</a>
+    
+    <li ><a href="#method-i-hash_parameters-3F">#hash_parameters?</a>
+    
+    <li ><a href="#method-i-key_types">#key_types</a>
+    
+    <li ><a href="#method-i-list_parameters-3F">#list_parameters?</a>
+    
+    <li ><a href="#method-i-namespace">#namespace</a>
+    
+    <li ><a href="#method-i-nil_type-3F">#nil_type?</a>
+    
+    <li ><a href="#method-i-parameters-3F">#parameters?</a>
+    
+    <li ><a href="#method-i-qualify">#qualify</a>
+    
+    <li ><a href="#method-i-rooted-3F">#rooted?</a>
+    
+    <li ><a href="#method-i-scope">#scope</a>
+    
+    <li ><a href="#method-i-undefined-3F">#undefined?</a>
+    
+    <li ><a href="#method-i-value_types">#value_types</a>
+    
+    <li ><a href="#method-i-void-3F">#void?</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-Solargraph::ComplexType::TypeMethods">
+  <h1 id="module-Solargraph::ComplexType::TypeMethods" class="module">
+    module Solargraph::ComplexType::TypeMethods
+  </h1>
+
+  <section class="description">
+    
+<p>Methods for accessing type data.</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">name</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>@return [String]</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-substring" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">substring</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>@return [String]</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-subtypes" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">subtypes</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>@return [Array&lt;ComplexType&gt;]</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-tag" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">tag</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>@return [String]</p>
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-3D-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">==</span><span
+            class="method-args">(other)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="3D-3D-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/complex_type/type_methods.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span> <span class="ruby-identifier">other</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">class</span>
+  <span class="ruby-identifier">tag</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">tag</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-defined-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">defined?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="defined-3F-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/complex_type/type_methods.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">defined?</span>
+  <span class="ruby-operator">!</span><span class="ruby-identifier ruby-title">undefined?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-duck_type-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">duck_type?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [Boolean]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="duck_type-3F-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/complex_type/type_methods.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">duck_type?</span>
+  <span class="ruby-ivar">@duck_type</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&#39;#&#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-fixed_parameters-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fixed_parameters?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [Boolean]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="fixed_parameters-3F-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/complex_type/type_methods.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fixed_parameters?</span>
+  <span class="ruby-identifier">substring</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&#39;(&#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-hash_parameters-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hash_parameters?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [Boolean]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="hash_parameters-3F-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/complex_type/type_methods.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash_parameters?</span>
+  <span class="ruby-identifier">substring</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&#39;{&#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-key_types" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">key_types</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [Array&lt;ComplexType&gt;]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="key_types-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/complex_type/type_methods.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">key_types</span>
+  <span class="ruby-ivar">@key_types</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-list_parameters-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">list_parameters?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [Boolean]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="list_parameters-3F-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/complex_type/type_methods.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">list_parameters?</span>
+  <span class="ruby-identifier">substring</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&#39;&lt;&#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-namespace" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">namespace</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [String]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="namespace-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/complex_type/type_methods.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">namespace</span>
+  <span class="ruby-ivar">@namespace</span> <span class="ruby-operator">||=</span> <span class="ruby-string">&#39;Object&#39;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">duck_type?</span>
+  <span class="ruby-ivar">@namespace</span> <span class="ruby-operator">||=</span> <span class="ruby-string">&#39;NilClass&#39;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">nil_type?</span>
+  <span class="ruby-ivar">@namespace</span> <span class="ruby-operator">||=</span> (<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;Class&#39;</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;Module&#39;</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">subtypes</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">subtypes</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-nil_type-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">nil_type?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [Boolean]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="nil_type-3F-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/complex_type/type_methods.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">nil_type?</span>
+  <span class="ruby-ivar">@nil_type</span> = (<span class="ruby-identifier">name</span>.<span class="ruby-identifier">casecmp</span>(<span class="ruby-string">&#39;nil&#39;</span>) <span class="ruby-operator">==</span> <span class="ruby-value">0</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@nil_type</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-ivar">@nil_type</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-parameters-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parameters?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [Boolean]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="parameters-3F-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/complex_type/type_methods.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parameters?</span>
+  <span class="ruby-operator">!</span><span class="ruby-identifier">substring</span>.<span class="ruby-identifier">empty?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-qualify" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">qualify</span><span
+            class="method-args">(api_map, context = &#39;&#39;)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generate a <a href="../ComplexType.html">ComplexType</a> that fully
+qualifies this type&#39;s namespaces.</p>
+
+<p>@param api_map [ApiMap] The <a href="../ApiMap.html">ApiMap</a> that
+performs qualification @param context [String] The namespace from which to
+resolve names @return [ComplexType] The generated <a
+href="../ComplexType.html">ComplexType</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="qualify-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/complex_type/type_methods.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">qualify</span> <span class="ruby-identifier">api_map</span>, <span class="ruby-identifier">context</span> = <span class="ruby-string">&#39;&#39;</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">ComplexType</span>.<span class="ruby-identifier">new</span>([<span class="ruby-keyword">self</span>]) <span class="ruby-keyword">if</span> <span class="ruby-identifier">duck_type?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">void?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">undefined?</span>
+  <span class="ruby-identifier">recon</span> = (<span class="ruby-identifier">rooted?</span> <span class="ruby-operator">?</span> <span class="ruby-string">&#39;&#39;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">context</span>)
+  <span class="ruby-identifier">fqns</span> = <span class="ruby-identifier">api_map</span>.<span class="ruby-identifier">qualify</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">recon</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">fqns</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">UniqueType</span><span class="ruby-operator">::</span><span class="ruby-constant">BOOLEAN</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">tag</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;Boolean&#39;</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">UniqueType</span><span class="ruby-operator">::</span><span class="ruby-constant">UNDEFINED</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">fqns</span> = <span class="ruby-node">&quot;::#{fqns}&quot;</span> <span class="ruby-comment"># Ensure the resulting complex type is rooted</span>
+  <span class="ruby-identifier">ltypes</span> = <span class="ruby-identifier">key_types</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">qualify</span> <span class="ruby-identifier">api_map</span>, <span class="ruby-identifier">context</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">rtypes</span> = <span class="ruby-identifier">value_types</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">qualify</span> <span class="ruby-identifier">api_map</span>, <span class="ruby-identifier">context</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">list_parameters?</span>
+    <span class="ruby-constant">Solargraph</span><span class="ruby-operator">::</span><span class="ruby-constant">ComplexType</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-node">&quot;#{fqns}&lt;#{rtypes.map(&amp;:tag).join(&#39;, &#39;)}&gt;&quot;</span>).<span class="ruby-identifier">first</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">fixed_parameters?</span>
+    <span class="ruby-constant">Solargraph</span><span class="ruby-operator">::</span><span class="ruby-constant">ComplexType</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-node">&quot;#{fqns}(#{rtypes.map(&amp;:tag).join(&#39;, &#39;)})&quot;</span>).<span class="ruby-identifier">first</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">hash_parameters?</span>
+    <span class="ruby-constant">Solargraph</span><span class="ruby-operator">::</span><span class="ruby-constant">ComplexType</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-node">&quot;#{fqns}{#{ltypes.map(&amp;:tag).join(&#39;, &#39;)} =&gt; #{rtypes.map(&amp;:tag).join(&#39;, &#39;)}}&quot;</span>).<span class="ruby-identifier">first</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">Solargraph</span><span class="ruby-operator">::</span><span class="ruby-constant">ComplexType</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">fqns</span>).<span class="ruby-identifier">first</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-rooted-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rooted?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="rooted-3F-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/complex_type/type_methods.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rooted?</span>
+  <span class="ruby-ivar">@rooted</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-scope" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">scope</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [Symbol] :class or :instance</p>
+          
+          
+
+          
+          <div class="method-source-code" id="scope-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/complex_type/type_methods.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">scope</span>
+  <span class="ruby-ivar">@scope</span> <span class="ruby-operator">||=</span> <span class="ruby-value">:instance</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">duck_type?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">nil_type?</span>
+  <span class="ruby-ivar">@scope</span> <span class="ruby-operator">||=</span> (<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;Class&#39;</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;Module&#39;</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">subtypes</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">?</span> <span class="ruby-value">:class</span> <span class="ruby-operator">:</span> <span class="ruby-value">:instance</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-undefined-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">undefined?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="undefined-3F-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/complex_type/type_methods.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">undefined?</span>
+  <span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;undefined&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-value_types" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">value_types</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [Array&lt;ComplexType&gt;]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="value_types-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/complex_type/type_methods.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">value_types</span>
+  <span class="ruby-ivar">@subtypes</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-void-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">void?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="void-3F-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/complex_type/type_methods.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">void?</span>
+  <span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;void&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.0.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Solargraph::LanguageServer::Message::Extended::CheckGemVersion - solargraph-0.35.0 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../../";
+  var index_rel_prefix = "../../../../";
+</script>
+
+<script src="../../../../js/jquery.js"></script>
+<script src="../../../../js/darkfish.js"></script>
+
+<link href="../../../../css/fonts.css" rel="stylesheet">
+<link href="../../../../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../../../table_of_contents.html#pages">Pages</a>
+    <a href="../../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="../Base.html">Solargraph::LanguageServer::Message::Base</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li class="calls-super" ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-available">#available</a>
+    
+    <li ><a href="#method-i-fetched-3F">#fetched?</a>
+    
+    <li ><a href="#method-i-process">#process</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Solargraph::LanguageServer::Message::Extended::CheckGemVersion">
+  <h1 id="class-Solargraph::LanguageServer::Message::Extended::CheckGemVersion" class="class">
+    class Solargraph::LanguageServer::Message::Extended::CheckGemVersion
+  </h1>
+
+  <section class="description">
+    
+<p>Check if a more recent version of the <a
+href="../../../../Solargraph.html">Solargraph</a> gem is available. Notify
+the client when an update exists. If the `verbose` parameter is true,
+notify the client when the gem is up to date.</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="GEM_ZERO">GEM_ZERO
+        
+        <dd>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-current" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">current</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>@return [Gem::Version]</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-error" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">error</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>@return [String, nil]</p>
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(host, request, current: Gem::Version.new(Solargraph::VERSION), available: nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              <a href="../Base.html#method-c-new">Solargraph::LanguageServer::Message::Base.new</a>
+            </div>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/language_server/message/extended/check_gem_version.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span> <span class="ruby-identifier">host</span>, <span class="ruby-identifier">request</span>, <span class="ruby-value">current:</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Version</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Solargraph</span><span class="ruby-operator">::</span><span class="ruby-constant">VERSION</span>), <span class="ruby-value">available:</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">host</span>, <span class="ruby-identifier">request</span>)
+  <span class="ruby-ivar">@current</span> = <span class="ruby-identifier">current</span>
+  <span class="ruby-ivar">@available</span> = <span class="ruby-identifier">available</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-process" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">process</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="process-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/language_server/message/extended/check_gem_version.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">process</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">available</span> <span class="ruby-operator">&gt;</span> <span class="ruby-constant">GEM_ZERO</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">available</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">current</span>
+      <span class="ruby-identifier">host</span>.<span class="ruby-identifier">show_message_request</span> <span class="ruby-node">&quot;Solargraph gem version #{available} is available. (Current version: #{current})&quot;</span>,
+                                <span class="ruby-constant">LanguageServer</span><span class="ruby-operator">::</span><span class="ruby-constant">MessageTypes</span><span class="ruby-operator">::</span><span class="ruby-constant">INFO</span>,
+                                [<span class="ruby-string">&#39;Update now&#39;</span>] <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">result</span><span class="ruby-operator">|</span>
+                                  <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">result</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;Update now&#39;</span>
+                                  <span class="ruby-identifier">o</span>, <span class="ruby-identifier">s</span> = <span class="ruby-constant">Open3</span>.<span class="ruby-identifier">capture2</span>(<span class="ruby-string">&quot;gem update solargraph&quot;</span>)
+                                  <span class="ruby-keyword">if</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+                                    <span class="ruby-identifier">host</span>.<span class="ruby-identifier">show_message</span> <span class="ruby-string">&#39;Successfully updated the Solargraph gem.&#39;</span>, <span class="ruby-constant">LanguageServer</span><span class="ruby-operator">::</span><span class="ruby-constant">MessageTypes</span><span class="ruby-operator">::</span><span class="ruby-constant">INFO</span>
+                                    <span class="ruby-identifier">host</span>.<span class="ruby-identifier">send_notification</span> <span class="ruby-string">&#39;$/solargraph/restart&#39;</span>, {}
+                                  <span class="ruby-keyword">else</span>
+                                    <span class="ruby-identifier">host</span>.<span class="ruby-identifier">show_message</span> <span class="ruby-string">&#39;An error occurred while updating the gem.&#39;</span>, <span class="ruby-constant">LanguageServer</span><span class="ruby-operator">::</span><span class="ruby-constant">MessageTypes</span><span class="ruby-operator">::</span><span class="ruby-constant">ERROR</span>
+                                  <span class="ruby-keyword">end</span>
+                                <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">params</span>[<span class="ruby-string">&#39;verbose&#39;</span>]
+      <span class="ruby-identifier">host</span>.<span class="ruby-identifier">show_message</span> <span class="ruby-node">&quot;The Solargraph gem is up to date (version #{Solargraph::VERSION}).&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">fetched?</span>
+    <span class="ruby-constant">Solargraph</span><span class="ruby-operator">::</span><span class="ruby-constant">Logging</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">warn</span> <span class="ruby-identifier">error</span>
+    <span class="ruby-identifier">host</span>.<span class="ruby-identifier">show_message</span>(<span class="ruby-identifier">error</span>, <span class="ruby-constant">MessageTypes</span><span class="ruby-operator">::</span><span class="ruby-constant">ERROR</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-string">&#39;verbose&#39;</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">set_result</span>({
+    <span class="ruby-value">installed:</span> <span class="ruby-identifier">current</span>,
+    <span class="ruby-value">available:</span> <span class="ruby-identifier">available</span>
+  })
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-available" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">available</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [Gem::Version]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="available-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/language_server/message/extended/check_gem_version.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">available</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@available</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@fetched</span>
+    <span class="ruby-ivar">@fetched</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-ivar">@available</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">begin</span>
+        <span class="ruby-identifier">fetcher</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">SpecFetcher</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-identifier">tuple</span> = <span class="ruby-identifier">fetcher</span>.<span class="ruby-identifier">search_for_dependency</span>(<span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Dependency</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;solargraph&#39;</span>)).<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">first</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">tuple</span>.<span class="ruby-identifier">nil?</span>
+          <span class="ruby-ivar">@error</span> = <span class="ruby-string">&#39;An error occurred fetching the gem data&#39;</span>
+          <span class="ruby-constant">GEM_ZERO</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">tuple</span>.<span class="ruby-identifier">version</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EADDRNOTAVAIL</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-ivar">@error</span> = <span class="ruby-node">&quot;Unable to connect to gem source: #{e.message}&quot;</span>
+      <span class="ruby-constant">GEM_ZERO</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@available</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-fetched-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fetched?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="fetched-3F-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/language_server/message/extended/check_gem_version.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fetched?</span>
+  <span class="ruby-ivar">@fetched</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.0.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

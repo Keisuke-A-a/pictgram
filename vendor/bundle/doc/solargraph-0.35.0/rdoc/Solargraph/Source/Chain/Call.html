@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Solargraph::Source::Chain::Call - solargraph-0.35.0 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../";
+  var index_rel_prefix = "../../../";
+</script>
+
+<script src="../../../js/jquery.js"></script>
+<script src="../../../js/darkfish.js"></script>
+
+<link href="../../../css/fonts.css" rel="stylesheet">
+<link href="../../../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../../table_of_contents.html#pages">Pages</a>
+    <a href="../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Link
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-arguments_match">#arguments_match</a>
+    
+    <li ><a href="#method-i-extra_return_type">#extra_return_type</a>
+    
+    <li ><a href="#method-i-inferred_pins">#inferred_pins</a>
+    
+    <li ><a href="#method-i-inner_process_macro">#inner_process_macro</a>
+    
+    <li ><a href="#method-i-process_directive">#process_directive</a>
+    
+    <li ><a href="#method-i-process_macro">#process_macro</a>
+    
+    <li ><a href="#method-i-resolve">#resolve</a>
+    
+    <li ><a href="#method-i-with_block-3F">#with_block?</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Solargraph::Source::Chain::Call">
+  <h1 id="class-Solargraph::Source::Chain::Call" class="class">
+    class Solargraph::Source::Chain::Call
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-arguments" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">arguments</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>@return [Array&lt;Chain&gt;]</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-word" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">word</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>@return [String]</p>
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(word, arguments = [], with_block = false)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param word [String] @param arguments [Array&lt;Chain&gt;]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/source/chain/call.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span> <span class="ruby-identifier">word</span>, <span class="ruby-identifier">arguments</span> = [], <span class="ruby-identifier">with_block</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@word</span> = <span class="ruby-identifier">word</span>
+  <span class="ruby-ivar">@arguments</span> = <span class="ruby-identifier">arguments</span>
+  <span class="ruby-ivar">@with_block</span> = <span class="ruby-identifier">with_block</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-resolve" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">resolve</span><span
+            class="method-args">(api_map, name_pin, locals)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param api_map [ApiMap] @param name_pin [Pin::Base] @param locals
+[Array&lt;Pin::Base&gt;]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="resolve-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/source/chain/call.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">resolve</span> <span class="ruby-identifier">api_map</span>, <span class="ruby-identifier">name_pin</span>, <span class="ruby-identifier">locals</span>
+  <span class="ruby-identifier">found</span> = <span class="ruby-identifier">locals</span>.<span class="ruby-identifier">select</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">word</span>}
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">inferred_pins</span>(<span class="ruby-identifier">found</span>, <span class="ruby-identifier">api_map</span>, <span class="ruby-identifier">name_pin</span>.<span class="ruby-identifier">context</span>, <span class="ruby-identifier">locals</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">found</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">pins</span> = <span class="ruby-identifier">api_map</span>.<span class="ruby-identifier">get_method_stack</span>(<span class="ruby-identifier">name_pin</span>.<span class="ruby-identifier">binder</span>.<span class="ruby-identifier">namespace</span>, <span class="ruby-identifier">word</span>, <span class="ruby-value">scope:</span> <span class="ruby-identifier">name_pin</span>.<span class="ruby-identifier">binder</span>.<span class="ruby-identifier">scope</span>)
+  <span class="ruby-keyword">return</span> [] <span class="ruby-keyword">if</span> <span class="ruby-identifier">pins</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">inferred_pins</span>(<span class="ruby-identifier">pins</span>, <span class="ruby-identifier">api_map</span>, <span class="ruby-identifier">name_pin</span>.<span class="ruby-identifier">context</span>, <span class="ruby-identifier">locals</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-with_block-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">with_block?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="with_block-3F-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/source/chain/call.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">with_block?</span>
+  <span class="ruby-ivar">@with_block</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-arguments_match" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">arguments_match</span><span
+            class="method-args">(arguments, parameters)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="arguments_match-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/source/chain/call.rb, line 164</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">arguments_match</span> <span class="ruby-identifier">arguments</span>, <span class="ruby-identifier">parameters</span>
+  <span class="ruby-identifier">argcount</span> = <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-comment"># argcount -= 1 if !arguments.empty? &amp;&amp; arguments.last.links.first.word.start_with?(&#39;&amp;&#39;)</span>
+  <span class="ruby-identifier">parcount</span> = <span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-identifier">parcount</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&#39;&amp;&#39;</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">argcount</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">parcount</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">argcount</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">parcount</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&#39;*&#39;</span>))
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-extra_return_type" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">extra_return_type</span><span
+            class="method-args">(docstring, context)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param docstring [YARD::Docstring] @param context [ComplexType]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="extra_return_type-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/source/chain/call.rb, line 153</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">extra_return_type</span> <span class="ruby-identifier">docstring</span>, <span class="ruby-identifier">context</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">docstring</span>.<span class="ruby-identifier">has_tag?</span>(<span class="ruby-value">:return_single_parameter</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">context</span>.<span class="ruby-identifier">subtypes</span>.<span class="ruby-identifier">one?</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">context</span>.<span class="ruby-identifier">subtypes</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">docstring</span>.<span class="ruby-identifier">has_tag?</span>(<span class="ruby-value">:return_value_parameter</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">context</span>.<span class="ruby-identifier">value_types</span>.<span class="ruby-identifier">one?</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">context</span>.<span class="ruby-identifier">value_types</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-comment"># elsif docstring.has_tag?(:return) &amp;&amp; docstring.tag(:return).types &amp;&amp; !docstring.tag(:return).types.empty?</span>
+  <span class="ruby-comment">#   return ComplexType.try_parse(*docstring.tag(:return).types)</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-inferred_pins" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inferred_pins</span><span
+            class="method-args">(pins, api_map, context, locals)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param pins [Array&lt;Pin::Base&gt;] @param api_map [ApiMap] @param context
+[ComplexType] @param locals [Pin::LocalVariable] @return
+[Array&lt;Pin::Base&gt;]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="inferred_pins-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/source/chain/call.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inferred_pins</span> <span class="ruby-identifier">pins</span>, <span class="ruby-identifier">api_map</span>, <span class="ruby-identifier">context</span>, <span class="ruby-identifier">locals</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">pins</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">overloads</span> = <span class="ruby-identifier">p</span>.<span class="ruby-identifier">docstring</span>.<span class="ruby-identifier">tags</span>(<span class="ruby-value">:overload</span>)
+    <span class="ruby-comment"># next p if overloads.empty?</span>
+    <span class="ruby-identifier">type</span> = <span class="ruby-constant">ComplexType</span><span class="ruby-operator">::</span><span class="ruby-constant">UNDEFINED</span>
+    <span class="ruby-comment"># @param [YARD::Tags::OverloadTag]</span>
+    <span class="ruby-identifier">overloads</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ol</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">arguments_match</span>(<span class="ruby-identifier">arguments</span>, <span class="ruby-identifier">ol</span>.<span class="ruby-identifier">parameters</span>)
+      <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ol</span>.<span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">last</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">ol</span>.<span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&#39;&amp;&#39;</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">ol</span>.<span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">with_block?</span>
+      <span class="ruby-identifier">match</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span>, <span class="ruby-identifier">idx</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">achain</span> = <span class="ruby-identifier">arguments</span>[<span class="ruby-identifier">idx</span>]
+        <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">achain</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-identifier">param</span> = <span class="ruby-identifier">ol</span>.<span class="ruby-identifier">parameters</span>[<span class="ruby-identifier">idx</span>]
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">param</span>.<span class="ruby-identifier">nil?</span>
+          <span class="ruby-identifier">match</span> = <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ol</span>.<span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">last</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">ol</span>.<span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&#39;*&#39;</span>)
+          <span class="ruby-keyword">break</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">par</span> = <span class="ruby-identifier">ol</span>.<span class="ruby-identifier">tags</span>(<span class="ruby-value">:param</span>).<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">pp</span><span class="ruby-operator">|</span> <span class="ruby-identifier">pp</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">param</span>.<span class="ruby-identifier">first</span> }.<span class="ruby-identifier">first</span>
+        <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">par</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">par</span>.<span class="ruby-identifier">types</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">par</span>.<span class="ruby-identifier">types</span>.<span class="ruby-identifier">empty?</span>
+        <span class="ruby-identifier">atype</span> = <span class="ruby-identifier">achain</span>.<span class="ruby-identifier">infer</span>(<span class="ruby-identifier">api_map</span>, <span class="ruby-constant">Pin</span><span class="ruby-operator">::</span><span class="ruby-constant">ProxyType</span>.<span class="ruby-identifier">anonymous</span>(<span class="ruby-identifier">context</span>), <span class="ruby-identifier">locals</span>)
+        <span class="ruby-identifier">other</span> = <span class="ruby-constant">ComplexType</span>.<span class="ruby-identifier">try_parse</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">par</span>.<span class="ruby-identifier">types</span>)
+        <span class="ruby-comment"># @todo Weak type comparison</span>
+        <span class="ruby-keyword">unless</span> <span class="ruby-identifier">atype</span>.<span class="ruby-identifier">tag</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">tag</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">api_map</span>.<span class="ruby-identifier">super_and_sub?</span>(<span class="ruby-identifier">other</span>.<span class="ruby-identifier">tag</span>, <span class="ruby-identifier">atype</span>.<span class="ruby-identifier">tag</span>)
+          <span class="ruby-identifier">match</span> = <span class="ruby-keyword">false</span>
+          <span class="ruby-keyword">break</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">match</span>
+        <span class="ruby-identifier">type</span> = <span class="ruby-identifier">extra_return_type</span>(<span class="ruby-identifier">ol</span>, <span class="ruby-identifier">context</span>)
+        <span class="ruby-identifier">type</span> = <span class="ruby-constant">ComplexType</span>.<span class="ruby-identifier">try_parse</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">ol</span>.<span class="ruby-identifier">tag</span>(<span class="ruby-value">:return</span>).<span class="ruby-identifier">types</span>).<span class="ruby-identifier">self_to</span>(<span class="ruby-identifier">context</span>.<span class="ruby-identifier">to_s</span>).<span class="ruby-identifier">qualify</span>(<span class="ruby-identifier">api_map</span>, <span class="ruby-identifier">context</span>.<span class="ruby-identifier">namespace</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">ol</span>.<span class="ruby-identifier">has_tag?</span>(<span class="ruby-value">:return</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">ol</span>.<span class="ruby-identifier">tag</span>(<span class="ruby-value">:return</span>).<span class="ruby-identifier">types</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">ol</span>.<span class="ruby-identifier">tag</span>(<span class="ruby-value">:return</span>).<span class="ruby-identifier">types</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">type</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">type</span>.<span class="ruby-identifier">undefined?</span>)
+        <span class="ruby-identifier">type</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">ComplexType</span><span class="ruby-operator">::</span><span class="ruby-constant">UNDEFINED</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">type</span>.<span class="ruby-identifier">defined?</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">proxy</span>(<span class="ruby-identifier">type</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">type</span>.<span class="ruby-identifier">defined?</span>
+    <span class="ruby-identifier">type</span> = <span class="ruby-identifier">extra_return_type</span>(<span class="ruby-identifier">p</span>.<span class="ruby-identifier">docstring</span>, <span class="ruby-identifier">context</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">type</span>
+      <span class="ruby-keyword">next</span> <span class="ruby-constant">Solargraph</span><span class="ruby-operator">::</span><span class="ruby-constant">Pin</span><span class="ruby-operator">::</span><span class="ruby-constant">Method</span>.<span class="ruby-identifier">new</span>(
+        <span class="ruby-value">location:</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">location</span>,
+        <span class="ruby-value">closure:</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">closure</span>,
+        <span class="ruby-value">name:</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">name</span>,
+        <span class="ruby-value">comments:</span> <span class="ruby-node">&quot;@return [#{context.subtypes.first.to_s}]&quot;</span>,
+        <span class="ruby-value">scope:</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">scope</span>,
+        <span class="ruby-value">visibility:</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">visibility</span>,
+        <span class="ruby-value">args:</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">parameters</span>,
+        <span class="ruby-value">node:</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">node</span>
+      )
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Pin</span><span class="ruby-operator">::</span><span class="ruby-constant">Method</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">p</span>.<span class="ruby-identifier">macros</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">result</span> = <span class="ruby-identifier">process_macro</span>(<span class="ruby-identifier">p</span>, <span class="ruby-identifier">api_map</span>, <span class="ruby-identifier">context</span>, <span class="ruby-identifier">locals</span>)
+      <span class="ruby-keyword">next</span> <span class="ruby-identifier">result</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">return_type</span>.<span class="ruby-identifier">undefined?</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-operator">!</span><span class="ruby-identifier">p</span>.<span class="ruby-identifier">directives</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">result</span> = <span class="ruby-identifier">process_directive</span>(<span class="ruby-identifier">p</span>, <span class="ruby-identifier">api_map</span>, <span class="ruby-identifier">context</span>, <span class="ruby-identifier">locals</span>)
+      <span class="ruby-keyword">next</span> <span class="ruby-identifier">result</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">return_type</span>.<span class="ruby-identifier">undefined?</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">p</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">result</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pin</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-identifier">pin</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">pin</span>.<span class="ruby-identifier">return_type</span>.<span class="ruby-identifier">undefined?</span>
+    <span class="ruby-identifier">selfy</span> = <span class="ruby-identifier">pin</span>.<span class="ruby-identifier">return_type</span>.<span class="ruby-identifier">self_to</span>(<span class="ruby-identifier">context</span>.<span class="ruby-identifier">tag</span>)
+    <span class="ruby-identifier">selfy</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">pin</span>.<span class="ruby-identifier">return_type</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">pin</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">pin</span>.<span class="ruby-identifier">proxy</span>(<span class="ruby-identifier">selfy</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-inner_process_macro" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inner_process_macro</span><span
+            class="method-args">(pin, macro, api_map, context, locals)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param api_map [ApiMap] @param macro [YARD::Tags::MacroDirective]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="inner_process_macro-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/source/chain/call.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inner_process_macro</span> <span class="ruby-identifier">pin</span>, <span class="ruby-identifier">macro</span>, <span class="ruby-identifier">api_map</span>, <span class="ruby-identifier">context</span>, <span class="ruby-identifier">locals</span>
+  <span class="ruby-identifier">vals</span> = <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-constant">Pin</span><span class="ruby-operator">::</span><span class="ruby-constant">ProxyType</span>.<span class="ruby-identifier">anonymous</span>(<span class="ruby-identifier">c</span>.<span class="ruby-identifier">infer</span>(<span class="ruby-identifier">api_map</span>, <span class="ruby-identifier">pin</span>, <span class="ruby-identifier">locals</span>)) }
+  <span class="ruby-identifier">txt</span> = <span class="ruby-identifier">macro</span>.<span class="ruby-identifier">tag</span>.<span class="ruby-identifier">text</span>.<span class="ruby-identifier">clone</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">txt</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">macro</span>.<span class="ruby-identifier">tag</span>.<span class="ruby-identifier">name</span>
+    <span class="ruby-identifier">named</span> = <span class="ruby-identifier">api_map</span>.<span class="ruby-identifier">named_macro</span>(<span class="ruby-identifier">macro</span>.<span class="ruby-identifier">tag</span>.<span class="ruby-identifier">name</span>)
+    <span class="ruby-identifier">txt</span> = <span class="ruby-identifier">named</span>.<span class="ruby-identifier">tag</span>.<span class="ruby-identifier">text</span>.<span class="ruby-identifier">clone</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">named</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">i</span> = <span class="ruby-value">1</span>
+  <span class="ruby-identifier">vals</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">txt</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/\$#{i}/</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">context</span>.<span class="ruby-identifier">namespace</span>)
+    <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">docstring</span> = <span class="ruby-constant">Solargraph</span><span class="ruby-operator">::</span><span class="ruby-constant">Source</span>.<span class="ruby-identifier">parse_docstring</span>(<span class="ruby-identifier">txt</span>).<span class="ruby-identifier">to_docstring</span>
+  <span class="ruby-identifier">tag</span> = <span class="ruby-identifier">docstring</span>.<span class="ruby-identifier">tag</span>(<span class="ruby-value">:return</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">tag</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">tag</span>.<span class="ruby-identifier">types</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Pin</span><span class="ruby-operator">::</span><span class="ruby-constant">ProxyType</span>.<span class="ruby-identifier">anonymous</span>(<span class="ruby-constant">ComplexType</span>.<span class="ruby-identifier">try_parse</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">tag</span>.<span class="ruby-identifier">types</span>))
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">Pin</span><span class="ruby-operator">::</span><span class="ruby-constant">ProxyType</span>.<span class="ruby-identifier">anonymous</span>(<span class="ruby-constant">ComplexType</span><span class="ruby-operator">::</span><span class="ruby-constant">UNDEFINED</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-process_directive" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">process_directive</span><span
+            class="method-args">(pin, api_map, context, locals)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="process_directive-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/source/chain/call.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">process_directive</span> <span class="ruby-identifier">pin</span>, <span class="ruby-identifier">api_map</span>, <span class="ruby-identifier">context</span>, <span class="ruby-identifier">locals</span>
+  <span class="ruby-identifier">pin</span>.<span class="ruby-identifier">directives</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">macro</span> = <span class="ruby-identifier">api_map</span>.<span class="ruby-identifier">named_macro</span>(<span class="ruby-identifier">dir</span>.<span class="ruby-identifier">tag</span>.<span class="ruby-identifier">name</span>)
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">macro</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-identifier">inner_process_macro</span>(<span class="ruby-identifier">pin</span>, <span class="ruby-identifier">macro</span>, <span class="ruby-identifier">api_map</span>, <span class="ruby-identifier">context</span>, <span class="ruby-identifier">locals</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">return_type</span>.<span class="ruby-identifier">undefined?</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">Pin</span><span class="ruby-operator">::</span><span class="ruby-constant">ProxyType</span>.<span class="ruby-identifier">anonymous</span> <span class="ruby-constant">ComplexType</span><span class="ruby-operator">::</span><span class="ruby-constant">UNDEFINED</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-process_macro" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">process_macro</span><span
+            class="method-args">(pin, api_map, context, locals)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param pin [Pin::Method] @param api_map [ApiMap] @param context
+[ComplexType] @return [Pin::Base]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="process_macro-source">
+            <pre><span class="ruby-comment"># File lib/solargraph/source/chain/call.rb, line 111</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">process_macro</span> <span class="ruby-identifier">pin</span>, <span class="ruby-identifier">api_map</span>, <span class="ruby-identifier">context</span>, <span class="ruby-identifier">locals</span>
+  <span class="ruby-identifier">pin</span>.<span class="ruby-identifier">macros</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">macro</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-identifier">inner_process_macro</span>(<span class="ruby-identifier">pin</span>, <span class="ruby-identifier">macro</span>, <span class="ruby-identifier">api_map</span>, <span class="ruby-identifier">context</span>, <span class="ruby-identifier">locals</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">return_type</span>.<span class="ruby-identifier">undefined?</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">Pin</span><span class="ruby-operator">::</span><span class="ruby-constant">ProxyType</span>.<span class="ruby-identifier">anonymous</span>(<span class="ruby-constant">ComplexType</span><span class="ruby-operator">::</span><span class="ruby-constant">UNDEFINED</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.0.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
