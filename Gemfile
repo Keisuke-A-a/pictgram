@@ -41,6 +41,7 @@ gem "solargraph"
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'bcrypt'
+gem 'carrierwave'
 
 
 group :development, :test do
