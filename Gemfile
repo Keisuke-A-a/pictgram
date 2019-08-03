@@ -63,9 +63,9 @@ group :development do
 end
 
 # この３行を追加した
- group :production do
+group :production do
   gem 'pg'
- end
+end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
